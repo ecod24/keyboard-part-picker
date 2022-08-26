@@ -1,0 +1,15 @@
+{
+	"name": "keyboard-part-picker-server",
+	"scripts": {
+		"db:init": "psql -U postgres -f db/offline_schema.sql",
+		"db:seed": "psql -U postgres -f db/offline_seed.sql",
+		"start": "node server.js"
+	},
+	"author": "Edwin Codrington",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"pg-promise": "^10.11.1"
+	}
+}

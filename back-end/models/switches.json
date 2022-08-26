@@ -1,0 +1,65 @@
+[
+	{
+		"name": "Gateron Brown",
+		"brand": "Gateron",
+		"type": "tactile",
+		"force": 55,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Red",
+		"brand": "Gateron",
+		"type": "linear",
+		"force": 45,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Blue",
+		"brand": "Gateron",
+		"type": "clicky",
+		"force": 60,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Yellow",
+		"brand": "Gateron",
+		"type": "linear",
+		"force": 50,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Green",
+		"brand": "Gateron",
+		"type": "clicky",
+		"force": 80,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Black",
+		"brand": "Gateron",
+		"type": "linear",
+		"force": 60,
+		"pre-lubed": false
+	},
+	{
+		"name": "Cherry MX Red",
+		"brand": "Cherry",
+		"type": "linear",
+		"force": 45,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron White",
+		"brand": "Gateron",
+		"type": "linear",
+		"force": 35,
+		"pre-lubed": false
+	},
+	{
+		"name": "Gateron Oil King",
+		"brand": "Gateron",
+		"type": "linear",
+		"force": 55,
+		"pre-lubed": true
+	}
+]

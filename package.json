@@ -1,0 +1,11 @@
+{
+	"name": "keyboard-part-picker",
+	"version": "1.0.0",
+	"dependencies": {
+		"cors": "^2.8.5"
+	},
+	"author": "Edwin Codrington",
+	"scripts": {
+		"start": "cd back-end && npm i && npm start"
+	}
+}
