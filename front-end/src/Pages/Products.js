@@ -7,7 +7,7 @@ export default function Products({ API }) {
 		axios
 			.get(`${API}/switches`)
 			.then((response) => {
-				setSwitches(response.data);
+				setSwitches(response.data.payload);
 			})
 			.catch((error) => console.log(error));
 	}, []);
