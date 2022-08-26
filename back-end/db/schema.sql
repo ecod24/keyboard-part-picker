@@ -1,4 +1,4 @@
-\c dr8i3296f8fp6;
+\c d7t4k0k1e55dpt;
 CREATE TABLE keyboards (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
