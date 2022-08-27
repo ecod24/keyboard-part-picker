@@ -7,8 +7,7 @@ export default function NavBar() {
 	const [current, setCurrent] = useState("home");
 	return (
 		<nav>
-			<Link to="/"
-			>
+			<Link to="/">
 				<img src="https://i.imgur.com/bojPyWU.png" alt="Home Logo" />
 			</Link>
 			<Link
@@ -33,9 +32,9 @@ export default function NavBar() {
 				Completed Builds
 			</Link>
 			<Link
-				to="/browse"
-				onClick={() => setCurrent("browse")}
-				className={current === "browse" ? "selected" : null}
+				to="/products"
+				onClick={() => setCurrent("products")}
+				className={current === "products" ? "selected" : null}
 			>
 				Browse Products
 			</Link>
