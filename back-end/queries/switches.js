@@ -31,7 +31,7 @@ const updateSwitch = async (id, keyswitch) => {
 	let { name, brand, type, force, prelubed } = keyswitch;
 	try {
 		return await db.one(
-			"UPDATE switches SET name=$1, brand=$2, type=$3, force=$4, prelubed=$5 WHERE id=$6",
+			"UPDATE switches SET name=$1, brand=$2, type=$3, force=$4, prelubed=$5 WHERE id=$6 RETURNING *",
 			[name, brand, type, force, prelubed, id]
 		);
 	} catch (error) {

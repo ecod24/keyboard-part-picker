@@ -32,7 +32,7 @@ const updateKeyboard = async (id, keyboard) => {
 	let { name, brand, layout, price } = keyboard;
 	try {
 		return await db.one(
-			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4 WHERE id=$5",
+			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4 WHERE id=$5 RETURNING *",
 			[name, brand, layout, price, id]
 		);
 	} catch (error) {
