@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Builder() {
+export default function Builder(props) {
+	const { API, currentBuild, setCurrentBuild, removeFromCart } = props;
+
 	return (
 		<div className="partlist">
 			<table>
@@ -16,13 +19,19 @@ export default function Builder() {
 				</thead>
 				<tbody>
 					<tr>
-						<td>Keyboard (Case) </td>
+						<td>
+							<Link to="/products/keyboards">Keyboard (Case)</Link>
+						</td>
 					</tr>
 					<tr>
-						<td>Switches </td>
+						<td>
+							<Link to="/products/switches">Switches</Link>
+						</td>
 					</tr>
 					<tr>
-						<td>Keycaps </td>
+						<td>
+							<Link to="/products/keycaps">Keycaps</Link>
+						</td>
 					</tr>
 					<tr>
 						<td>PCB</td>
