@@ -64,7 +64,16 @@ export default function App() {
 				<Route path="/guides" element={<Guides API={API} />} />
 				<Route path="/builds" element={<Builds API={API} />} />
 				<Route path="/products" element={<Products API={API} />} />
-				<Route path="/products/switches" element={<SwitchIndex API={API} />} />
+				<Route
+					path="/products/switches"
+					element={
+						<SwitchIndex
+							API={API}
+							setCurrentBuild={setCurrentBuild}
+							currentBuild={currentBuild}
+						/>
+					}
+				/>
 				<Route path="/products/switches/new" element={<NewSwitch API={API} />} />
 				<Route path="/products/switches/:id" element={<ShowSwitch API={API} />} />
 				<Route path="/products/switches/:id/edit" element={<EditSwitch API={API} />} />
