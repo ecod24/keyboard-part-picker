@@ -13,7 +13,7 @@ export default function Products({ API }) {
 	}, []);
 	return (
 		<div>
-			{switches.map((singleSwitch) => {
+			{switches.map((singleSwitch, index) => {
 				return <p>{singleSwitch.name}</p>;
 			})}
 		</div>

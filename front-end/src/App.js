@@ -64,20 +64,20 @@ export default function App() {
 				<Route path="/guides" element={<Guides API={API} />} />
 				<Route path="/builds" element={<Builds API={API} />} />
 				<Route path="/products" element={<Products API={API} />} />
-				<Route path="/products/switches" element={<SwitchIndex />} />
-				<Route path="/products/switches/new" element={<NewSwitch />} />
-				<Route path="/products/switches/:id" element={<ShowSwitch />} />
-				<Route path="/products/switches/:id/edit" element={<EditSwitch />} />
+				<Route path="/products/switches" element={<SwitchIndex API={API} />} />
+				<Route path="/products/switches/new" element={<NewSwitch API={API} />} />
+				<Route path="/products/switches/:id" element={<ShowSwitch API={API} />} />
+				<Route path="/products/switches/:id/edit" element={<EditSwitch API={API} />} />
 
-				<Route path="/products/keycaps" element={<KeycapIndex />} />
-				<Route path="/products/keycaps/new" element={<NewKeycap />} />
-				<Route path="/products/keycaps/:id" element={<ShowKeycap />} />
-				<Route path="/products/keycaps/:id/edit" element={<EditKeycap />} />
+				<Route path="/products/keycaps" element={<KeycapIndex API={API} />} />
+				<Route path="/products/keycaps/new" element={<NewKeycap API={API} />} />
+				<Route path="/products/keycaps/:id" element={<ShowKeycap API={API} />} />
+				<Route path="/products/keycaps/:id/edit" element={<EditKeycap API={API} />} />
 
-				<Route path="/products/keyboards" element={<KeyboardIndex />} />
-				<Route path="/products/keyboards/new" element={<NewKeyboard />} />
-				<Route path="/products/keyboards/:id" element={<ShowKeyboard />} />
-				<Route path="/products/keyboards/:id/edit" element={<EditKeyboard />} />
+				<Route path="/products/keyboards" element={<KeyboardIndex API={API} />} />
+				<Route path="/products/keyboards/new" element={<NewKeyboard API={API} />} />
+				<Route path="/products/keyboards/:id" element={<ShowKeyboard API={API} />} />
+				<Route path="/products/keyboards/:id/edit" element={<EditKeyboard API={API} />} />
 			</Routes>
 		</div>
 	);
