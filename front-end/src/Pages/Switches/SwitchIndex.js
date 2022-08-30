@@ -8,7 +8,7 @@ export default function SwitchIndex({ API, currentBuild, setCurrentBuild }) {
 		axios
 			.get(`${API}/switches`)
 			.then((response) => {
-				setSwitches(response.data);
+				setSwitches(response.data.payload);
 			})
 			.catch((error) => console.log(error));
 	}, []);

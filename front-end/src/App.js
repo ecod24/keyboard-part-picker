@@ -78,7 +78,16 @@ export default function App() {
 				<Route path="/products/switches/:id" element={<ShowSwitch API={API} />} />
 				<Route path="/products/switches/:id/edit" element={<EditSwitch API={API} />} />
 
-				<Route path="/products/keycaps" element={<KeycapIndex API={API} />} />
+				<Route
+					path="/products/keycaps"
+					element={
+						<KeycapIndex
+							API={API}
+							setCurrentBuild={setCurrentBuild}
+							currentBuild={currentBuild}
+						/>
+					}
+				/>
 				<Route path="/products/keycaps/new" element={<NewKeycap API={API} />} />
 				<Route path="/products/keycaps/:id" element={<ShowKeycap API={API} />} />
 				<Route path="/products/keycaps/:id/edit" element={<EditKeycap API={API} />} />

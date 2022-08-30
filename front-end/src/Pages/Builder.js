@@ -70,7 +70,7 @@ export default function Builder(props) {
 								<Link to="/products/keyboards">Choose a Keyboard</Link>
 							) : (
 								<Link to={`/products/keyboards/${currentBuild.keyboard.id}`}>
-									currentBuild.keyboard.name
+									{currentBuild.keyboard.name}
 								</Link>
 							)}{" "}
 						</td>
@@ -84,7 +84,7 @@ export default function Builder(props) {
 								<Link to="/products/switches">Choose Switches</Link>
 							) : (
 								<Link to={`/products/switches/${currentBuild.switches.id}`}>
-									currentBuild.switches.name
+									{currentBuild.switches.name}
 								</Link>
 							)}
 						</td>
@@ -98,7 +98,7 @@ export default function Builder(props) {
 								<Link to="/products/keycaps">Choose a Keycap Set</Link>
 							) : (
 								<Link to={`/products/keycaps/${currentBuild.keycaps.id}`}>
-									currentBuild.keycaps.name
+									{currentBuild.keycaps.name}
 								</Link>
 							)}
 						</td>
