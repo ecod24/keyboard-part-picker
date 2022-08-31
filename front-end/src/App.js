@@ -92,7 +92,16 @@ export default function App() {
 				<Route path="/products/keycaps/:id" element={<ShowKeycap API={API} />} />
 				<Route path="/products/keycaps/:id/edit" element={<EditKeycap API={API} />} />
 
-				<Route path="/products/keyboards" element={<KeyboardIndex API={API} />} />
+				<Route
+					path="/products/keyboards"
+					element={
+						<KeyboardIndex
+							API={API}
+							setCurrentBuild={setCurrentBuild}
+							currentBuild={currentBuild}
+						/>
+					}
+				/>
 				<Route path="/products/keyboards/new" element={<NewKeyboard API={API} />} />
 				<Route path="/products/keyboards/:id" element={<ShowKeyboard API={API} />} />
 				<Route path="/products/keyboards/:id/edit" element={<EditKeyboard API={API} />} />

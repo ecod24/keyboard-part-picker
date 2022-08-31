@@ -19,7 +19,7 @@ export default function ShowKeycap({ API }) {
 		<div>
 			<h1>{keycapInfo.name}</h1>
 			<p>{keycapInfo.brand}</p>
-			<h2>{keycapInfo.price}</h2>
+			<h2>${keycapInfo.price}</h2>
 		</div>
 	);
 }
