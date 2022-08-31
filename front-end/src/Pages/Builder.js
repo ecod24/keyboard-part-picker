@@ -103,7 +103,7 @@ export default function Builder(props) {
 							)}
 						</td>
 					</tr>
-					<tr>
+					{/* <tr>
 						<td>PCB</td>
 					</tr>
 					<tr>
@@ -114,7 +114,7 @@ export default function Builder(props) {
 					</tr>
 					<tr>
 						<td>Add Custom Mods </td>
-					</tr>
+					</tr> */}
 				</tbody>
 			</table>
 		</div>
