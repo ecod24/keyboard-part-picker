@@ -20,8 +20,8 @@ const createKeyboard = async (keyboard) => {
 	try {
 		let { name, brand, layout, price } = keyboard;
 		return await db.one(
-			"INSERT INTO keyboards (name, brand, layout, price) VALUES ($1, $2, $3, $4) RETURNING *",
-			[name, brand, layout, price]
+			"INSERT INTO keyboards (name, brand, layout, price, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+			[name, brand, layout, price, image]
 		);
 	} catch (error) {
 		return error;
@@ -29,11 +29,11 @@ const createKeyboard = async (keyboard) => {
 };
 
 const updateKeyboard = async (id, keyboard) => {
-	let { name, brand, layout, price } = keyboard;
+	let { name, brand, layout, price, image } = keyboard;
 	try {
 		return await db.one(
-			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4 WHERE id=$5 RETURNING *",
-			[name, brand, layout, price, id]
+			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4, image=$5 WHERE id=$6 RETURNING *",
+			[name, brand, layout, price, image, id]
 		);
 	} catch (error) {
 		return error;

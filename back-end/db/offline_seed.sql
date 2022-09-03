@@ -1,10 +1,11 @@
-\ c kbpp;
-INSERT INTO keyboards (name, brand, layout, price)
+\c kbpp;
+INSERT INTO keyboards (name, brand, layout, price, image)
 VALUES (
         'Keychron K8 Pro',
         'Keychron',
         'TKL',
-        89.99
+        89.99,
+        'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronk8proqmkviawirelessmechanicalkeyboardformacwindowsosaprofilepbtkeycapspcbscrewinstabilizerwithhotswappablegaterongpromechanicalswitchcompatiblewithmxcherrypandakailhwithrgbbacklightaluminumframe-1645094681965.jpg?v=1645094684'
     ),
     ('Keychron Q1', 'Keychron', '75%', 159.99);
 INSERT INTO switches (name, brand, type, force, prelubed)

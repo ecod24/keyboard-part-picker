@@ -10,6 +10,7 @@ export default function EditKeyboard({ API }) {
 		brand: "",
 		layout: "",
 		price: 0,
+		image: "",
 	});
 	useEffect(() => {
 		axios
@@ -79,6 +80,16 @@ export default function EditKeyboard({ API }) {
 						name="price"
 						onChange={handleChange}
 						value={keyboard.price}
+					/>
+				</label>
+				<label>
+					Image
+					<input
+						id="image"
+						type="text"
+						name="image"
+						onChange={handleChange}
+						value={keyboard.image}
 					/>
 				</label>
 				<input type="submit" value="Submit" />

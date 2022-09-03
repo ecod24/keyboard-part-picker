@@ -7,7 +7,8 @@ CREATE TABLE keyboards (
     name TEXT NOT NULL,
     brand TEXT NOT NULL,
     layout TEXT NOT NULL,
-    price INT
+    price INT, 
+    image TEXT
 );
 CREATE TABLE switches (
     id SERIAL PRIMARY KEY,

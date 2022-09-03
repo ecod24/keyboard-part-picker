@@ -9,6 +9,7 @@ export default function NewKeyboard({ API }) {
 		brand: "",
 		layout: "",
 		price: 0,
+		image: "",
 	});
 	const handleChange = (event) => {
 		setKeyboard({
@@ -45,6 +46,10 @@ export default function NewKeyboard({ API }) {
 				<label>
 					Price
 					<input id="price" type="number" name="price" onChange={handleChange} />
+				</label>
+				<label>
+					Image
+					<input id="image" type="text" name="image" onChange={handleChange} />
 				</label>
 				<input type="submit" value="Submit" />
 			</form>
