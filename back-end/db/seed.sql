@@ -14,7 +14,7 @@ VALUES (
         'Gateron',
         'tactile',
         55,
-        false
+        false, 'blank'
     ),
     ('Gateron Red', 'Gateron', 'linear', 45, false, 'blank'),
     ('Gateron Blue', 'Gateron', 'clicky', 60, false, 'blank'),
