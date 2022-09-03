@@ -13,7 +13,8 @@ CREATE TABLE switches (
     brand TEXT NOT NULL,
     type TEXT NOT NULL,
     force INT,
-    prelubed BOOL default false
+    prelubed BOOL default false, 
+    image TEXT
 );
 CREATE TABLE keycaps (
     id SERIAL PRIMARY KEY,

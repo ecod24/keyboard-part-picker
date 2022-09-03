@@ -17,10 +17,10 @@ const getSwitch = async (id) => {
 
 const createSwitch = async (keyswitch) => {
 	try {
-		let { name, brand, type, force, prelubed } = keyswitch;
+		let { name, brand, type, force, prelubed, image } = keyswitch;
 		return await db.one(
-			"INSERT INTO switches (name, brand, type, force, prelubed) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-			[name, brand, type, force, prelubed]
+			"INSERT INTO switches (name, brand, type, force, prelubed, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+			[name, brand, type, force, prelubed, image]
 		);
 	} catch (error) {
 		return error;
@@ -28,11 +28,11 @@ const createSwitch = async (keyswitch) => {
 };
 
 const updateSwitch = async (id, keyswitch) => {
-	let { name, brand, type, force, prelubed } = keyswitch;
+	let { name, brand, type, force, prelubed, image } = keyswitch;
 	try {
 		return await db.one(
-			"UPDATE switches SET name=$1, brand=$2, type=$3, force=$4, prelubed=$5 WHERE id=$6 RETURNING *",
-			[name, brand, type, force, prelubed, id]
+			"UPDATE switches SET name=$1, brand=$2, type=$3, force=$4, prelubed=$5, image=$6 WHERE id=$7 RETURNING *",
+			[name, brand, type, force, prelubed, image, id]
 		);
 	} catch (error) {
 		return error;
