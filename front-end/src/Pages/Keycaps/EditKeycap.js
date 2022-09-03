@@ -27,13 +27,13 @@ export default function EditKeycap({ API }) {
 			.catch((error) => {
 				console.log(error);
 			});
-	});
+	}, [id]);
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios
 			.post(`${API}/keycaps`, keycaps)
 			.then((response) => {
-				navigate(`/keycaps`);
+				navigate(`/products/keycaps/${id}`);
 			})
 			.catch((error) => {
 				console.log(error);

@@ -18,6 +18,7 @@ export default function ShowKeyboard({ API }) {
 			<h1>{keyboardInfo.name}</h1>
 			<p>{keyboardInfo.brand}</p>
 			<h2>${keyboardInfo.price}</h2>
+			<img src={`${keyboardInfo.image}`} alt="its a keyboard" />
 		</div>
 	);
 }

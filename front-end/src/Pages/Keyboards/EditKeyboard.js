@@ -21,7 +21,7 @@ export default function EditKeyboard({ API }) {
 			.catch((error) => {
 				console.log(error);
 			});
-	});
+	}, [id]);
 	const handleChange = (event) => {
 		setKeyboard({
 			...keyboard,
@@ -33,7 +33,7 @@ export default function EditKeyboard({ API }) {
 		axios
 			.put(`${API}/keyboards/${id}`, keyboard)
 			.then((response) => {
-				navigate(`/keyboards/${id}`);
+				navigate(`/products/keyboards/${id}`);
 			})
 			.catch((error) => {
 				console.log(error);

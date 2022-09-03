@@ -20,6 +20,7 @@ export default function ShowSwitch({ API }) {
 			<h1>{switchInfo.name}</h1>
 			<p>{switchInfo.brand}</p>
 			<h2>${switchInfo.price}</h2>
+			<img src={`${switchInfo.image}`} alt="its probably a switch" />
 		</div>
 	);
 }

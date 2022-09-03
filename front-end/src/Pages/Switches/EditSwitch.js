@@ -11,6 +11,7 @@ export default function EditSwitch({ API }) {
 		type: "",
 		force: 0,
 		prelubed: false,
+		image: "",
 	});
 	useEffect(() => {
 		axios
@@ -33,7 +34,7 @@ export default function EditSwitch({ API }) {
 		axios
 			.put(`${API}/switches/${id}`, keyswitch)
 			.then((response) => {
-				navigate(`/switches`);
+				navigate(`/products/switches/${id}`);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -93,6 +94,16 @@ export default function EditSwitch({ API }) {
 						name="prelubed"
 						onChange={handleCheckboxChange}
 						value={keyswitch.prelubed}
+					/>
+				</label>
+				<label>
+					Image
+					<input
+						id="image"
+						type="text"
+						name="image"
+						onChange={handleChange}
+						value={keyswitch.image}
 					/>
 				</label>
 				<input type="submit" value="Submit" />
