@@ -42,6 +42,7 @@ export default function EditKeycap({ API }) {
 	return (
 		<div className="keycaps-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Edit Keycap Set Information</h2>
 				<label>
 					Name
 					<input

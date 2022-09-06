@@ -31,6 +31,7 @@ export default function NewKeyboard({ API }) {
 	return (
 		<div className="keyboard-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Add a new Keyboard</h2>
 				<label>
 					Name
 					<input id="name" type="text" name="name" onChange={handleChange} />

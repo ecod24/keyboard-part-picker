@@ -46,6 +46,7 @@ export default function EditSwitch({ API }) {
 	return (
 		<div className="switches-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Edit Switch</h2>
 				<label>
 					Name
 					<input

@@ -31,6 +31,7 @@ export default function NewKeycap({ API }) {
 	return (
 		<div className="keycaps-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Add a Keycap Set</h2>
 				<label>
 					Name
 					<input id="name" type="text" name="name" onChange={handleChange} />

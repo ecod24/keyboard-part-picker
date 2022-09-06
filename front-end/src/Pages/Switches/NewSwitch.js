@@ -35,22 +35,27 @@ export default function NewSwitch({ API }) {
 	return (
 		<div className="switches-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Add a new Switch</h2>
 				<label>
 					Name
 					<input id="name" type="text" name="name" onChange={handleChange} />
 				</label>
+				<br />
 				<label>
 					Brand
 					<input id="brand" type="text" name="brand" onChange={handleChange} />
 				</label>
+				<br />
 				<label>
 					Type
 					<input id="type" type="text" name="type" onChange={handleChange} />
 				</label>
+				<br />
 				<label>
 					Force
 					<input id="force" type="number" name="force" onChange={handleChange} />
 				</label>
+				<br />
 				<label>
 					Pre Lubed?
 					<input
@@ -60,11 +65,14 @@ export default function NewSwitch({ API }) {
 						onChange={handleCheckboxChange}
 					/>
 				</label>
+				<br />
 				<label>
 					Image
 					<input id="image" type="text" name="image" onChange={handleChange} />
+					<br />
 					<img src={`${keyswitch.image}`} alt={`${keyswitch.name}`} />
 				</label>
+				<br />
 				<input type="submit" value="Submit" />
 			</form>
 		</div>

@@ -53,7 +53,7 @@ table {
 }
 td {
 	text-align: center;
-	border-top: 1px solid red;
+	border-top: 1px solid rgb(0, 0, 0);
 }
 a.add {
 	padding: 5px;
@@ -62,4 +62,11 @@ a.add {
 .single-keycap img,
 .single-keyboard img {
 	max-width: 40px;
+}
+form {
+	padding: 10px;
+	text-align: center;
+}
+form input {
+	margin: 10px;
 }

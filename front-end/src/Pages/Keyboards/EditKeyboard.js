@@ -43,6 +43,7 @@ export default function EditKeyboard({ API }) {
 	return (
 		<div className="keyboard-form">
 			<form onSubmit={handleSubmit}>
+				<h2>Edit Keyboard Information</h2>
 				<label>
 					Name
 					<input
