@@ -2,10 +2,16 @@ nav {
 	height: 100px;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	border-bottom: 3px solid red;
+	border-bottom: 1px solid gray;
+	text-align: center;
+}
+nav div {
+	margin: 25px;
+	text-align: center;
+	justify-content: center;
 }
 nav img {
-	height: 100px;
+	max-height: 80px;
 }
 a {
 	color: black;

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Guides.css";
 
 export default function Guides({ API }) {
 	const [keyboard, setKeyboard] = useState({});
@@ -35,7 +36,7 @@ export default function Guides({ API }) {
 	}, []);
 
 	return (
-		<div>
+		<div className="build-guide">
 			(WORK IN PROGRESS)
 			<div>
 				<h2>The "Best Budget Build in the World"</h2>
