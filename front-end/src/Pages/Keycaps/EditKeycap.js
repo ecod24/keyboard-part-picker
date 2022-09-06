@@ -31,7 +31,7 @@ export default function EditKeycap({ API }) {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		axios
-			.post(`${API}/keycaps`, keycaps)
+			.put(`${API}/keycaps/${id}`, keycaps)
 			.then((response) => {
 				navigate(`/products/keycaps/${id}`);
 			})
@@ -76,7 +76,7 @@ export default function EditKeycap({ API }) {
 					Color
 					<input
 						id="color"
-						type="number"
+						type="text"
 						name="color"
 						onChange={handleChange}
 						value={keycaps.color}

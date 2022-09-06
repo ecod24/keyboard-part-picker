@@ -6,6 +6,7 @@ export default function Keyswitch({ info, currentBuild, setCurrentBuild }) {
 	return (
 		<div>
 			<Link to={`/products/switches/${info.id}`}>{info.name}</Link>
+			<img src={`${info.image}`} alt={`${info.name}`} />
 			<button
 				onClick={() => {
 					setCurrentBuild({ ...currentBuild, switches: info });

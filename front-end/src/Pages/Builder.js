@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Builder.css";
 
 export default function Builder(props) {
 	const { currentBuild } = props;
@@ -11,10 +12,7 @@ export default function Builder(props) {
 					<tr>
 						<th>Component</th>
 						<th>Selection</th>
-						<th>Base Price</th>
-						<th>Shipping</th>
-						<th>Total Price</th>
-						<th>Where to Buy</th>
+						<th>Price</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,10 +25,30 @@ export default function Builder(props) {
 							{currentBuild.keyboard === null ? (
 								<Link to="/products/keyboards">Choose a Keyboard</Link>
 							) : (
-								<Link to={`/products/keyboards/${currentBuild.keyboard.id}`}>
-									{currentBuild.keyboard.name}
-								</Link>
+								<div className="icon-and-title">
+									<Link to={`/products/keyboards/${currentBuild.keyboard.id}`}>
+										<img
+											className="keyboard-index-icon"
+											src={
+												currentBuild.keyboard.image !== "blank"
+													? `${currentBuild.keyboard.image}`
+													: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png`
+											}
+											alt="keyboard-icon"
+										/>
+									</Link>
+									<Link to={`/products/keyboards/${currentBuild.keyboard.id}`}>
+										{currentBuild.keyboard.name}
+									</Link>
+								</div>
 							)}{" "}
+						</td>
+						<td>
+							{currentBuild.keyboard === null ? (
+								""
+							) : (
+								<p>${currentBuild.keyboard.price}</p>
+							)}
 						</td>
 					</tr>
 					<tr>
@@ -41,9 +59,22 @@ export default function Builder(props) {
 							{currentBuild.switches === null ? (
 								<Link to="/products/switches">Choose Switches</Link>
 							) : (
-								<Link to={`/products/switches/${currentBuild.switches.id}`}>
-									{currentBuild.switches.name}
-								</Link>
+								<div className="icon-and-title">
+									<Link to={`/products/switches/${currentBuild.switches.id}`}>
+										<img
+											className="keyboard-index-icon"
+											src={
+												currentBuild.switches.image !== "blank"
+													? `${currentBuild.switches.image}`
+													: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png`
+											}
+											alt="keyboard-icon"
+										/>
+									</Link>
+									<Link to={`/products/switches/${currentBuild.switches.id}`}>
+										{currentBuild.switches.name}
+									</Link>
+								</div>
 							)}
 						</td>
 					</tr>
@@ -55,9 +86,29 @@ export default function Builder(props) {
 							{currentBuild.keycaps === null ? (
 								<Link to="/products/keycaps">Choose a Keycap Set</Link>
 							) : (
-								<Link to={`/products/keycaps/${currentBuild.keycaps.id}`}>
-									{currentBuild.keycaps.name}
-								</Link>
+								<div className="icon-and-title">
+									<Link to={`/products/keycaps/${currentBuild.keycaps.id}`}>
+										<img
+											className="keyboard-index-icon"
+											src={
+												currentBuild.keycaps.image !== "blank"
+													? `${currentBuild.keycaps.image}`
+													: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png`
+											}
+											alt="keyboard-icon"
+										/>
+									</Link>
+									<Link to={`/products/keycaps/${currentBuild.keycaps.id}`}>
+										{currentBuild.keycaps.name}
+									</Link>
+								</div>
+							)}
+						</td>
+						<td>
+							{currentBuild.keycaps === null ? (
+								""
+							) : (
+								<p>${currentBuild.keycaps.price}</p>
 							)}
 						</td>
 					</tr>

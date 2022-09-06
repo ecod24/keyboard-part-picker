@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function ShowSwitch({ API }) {
+	const navigate = useNavigate();
 	const { id } = useParams();
 	const [switchInfo, setSwitchInfo] = useState({});
 	useEffect(() => {
@@ -20,7 +22,28 @@ export default function ShowSwitch({ API }) {
 			<h1>{switchInfo.name}</h1>
 			<p>{switchInfo.brand}</p>
 			<h2>${switchInfo.price}</h2>
-			<img src={`${switchInfo.image}`} alt="its probably a switch" />
+			<img
+				src={`${
+					switchInfo.image !== "blank"
+						? switchInfo.image
+						: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+				}`}
+				alt="its probably a switch"
+			/>
+			<Link to="/products/switches">
+				<button>All Switches</button>
+			</Link>
+			<Link to={`/products/switches/${id}/edit`}>
+				<button>Edit Info</button>
+			</Link>
+			<button
+				onClick={() => {
+					axios.delete(`${API}/switches/${id}`);
+					navigate("/products/switches");
+				}}
+			>
+				Delete
+			</button>
 		</div>
 	);
 }

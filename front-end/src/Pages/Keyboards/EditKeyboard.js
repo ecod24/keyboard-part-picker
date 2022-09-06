@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function EditKeyboard({ API }) {
 	const { id } = useParams();
@@ -94,6 +95,9 @@ export default function EditKeyboard({ API }) {
 				</label>
 				<input type="submit" value="Submit" />
 			</form>
+			<Link to={`/products/keyboards/${id}`}>
+				<button>Back</button>
+			</Link>
 		</div>
 	);
 }
