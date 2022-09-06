@@ -53,6 +53,7 @@ export default function EditKeyboard({ API }) {
 						value={keyboard.name}
 					/>
 				</label>
+				<br />
 				<label>
 					Brand
 					<input
@@ -63,6 +64,7 @@ export default function EditKeyboard({ API }) {
 						value={keyboard.brand}
 					/>
 				</label>
+				<br />
 				<label>
 					Layout
 					<input
@@ -73,6 +75,7 @@ export default function EditKeyboard({ API }) {
 						value={keyboard.layout}
 					/>
 				</label>
+				<br />
 				<label>
 					Price
 					<input
@@ -83,6 +86,7 @@ export default function EditKeyboard({ API }) {
 						value={keyboard.price}
 					/>
 				</label>
+				<br />
 				<label>
 					Image
 					<input
@@ -92,7 +96,10 @@ export default function EditKeyboard({ API }) {
 						onChange={handleChange}
 						value={keyboard.image}
 					/>
+					<br />
+					<img src={`${keyboard.image}`} alt={`${keyboard.name}`} />
 				</label>
+				<br />
 				<input type="submit" value="Submit" />
 			</form>
 			<Link to={`/products/keyboards/${id}`}>

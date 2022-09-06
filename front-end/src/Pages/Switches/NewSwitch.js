@@ -10,6 +10,7 @@ export default function NewSwitch({ API }) {
 		type: "",
 		force: 0,
 		prelubed: false,
+		image: "",
 	});
 	const handleChange = (event) => {
 		setKeyswitch({
@@ -22,7 +23,7 @@ export default function NewSwitch({ API }) {
 		axios
 			.post(`${API}/switches`, keyswitch)
 			.then((response) => {
-				navigate(`/switches`);
+				navigate(`/products/switches`);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -58,6 +59,11 @@ export default function NewSwitch({ API }) {
 						name="prelubed"
 						onChange={handleCheckboxChange}
 					/>
+				</label>
+				<label>
+					Image
+					<input id="image" type="text" name="image" onChange={handleChange} />
+					<img src={`${keyswitch.image}`} alt={`${keyswitch.name}`} />
 				</label>
 				<input type="submit" value="Submit" />
 			</form>

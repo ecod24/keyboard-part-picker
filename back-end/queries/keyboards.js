@@ -18,7 +18,7 @@ const getKeyboard = async (id) => {
 
 const createKeyboard = async (keyboard) => {
 	try {
-		let { name, brand, layout, price } = keyboard;
+		let { name, brand, layout, price, image } = keyboard;
 		return await db.one(
 			"INSERT INTO keyboards (name, brand, layout, price, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
 			[name, brand, layout, price, image]

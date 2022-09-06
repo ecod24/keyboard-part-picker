@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Keyboard from "../../Components/Keyboard";
+import { Link } from "react-router-dom";
 
 export default function KeyboardIndex({ API, currentBuild, setCurrentBuild }) {
 	const [keyboards, setKeyboards] = useState([]);
@@ -14,16 +15,32 @@ export default function KeyboardIndex({ API, currentBuild, setCurrentBuild }) {
 	}, []);
 	return (
 		<div className="keyboard-index">
-			{keyboards.map((item, index) => {
-				return (
-					<Keyboard
-						info={item}
-						key={index}
-						currentBuild={currentBuild}
-						setCurrentBuild={setCurrentBuild}
-					/>
-				);
-			})}
+			<Link className="add" to="/products/keyboards/new">
+				Add Custom Keyboard
+			</Link>
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Layout</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{keyboards.map((item, index) => {
+						return (
+							<Keyboard
+								info={item}
+								key={index}
+								currentBuild={currentBuild}
+								setCurrentBuild={setCurrentBuild}
+							/>
+						);
+					})}
+				</tbody>
+			</table>
 		</div>
 	);
 }

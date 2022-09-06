@@ -52,6 +52,7 @@ export default function EditKeycap({ API }) {
 						value={keycaps.name}
 					/>
 				</label>
+				<br />
 				<label>
 					Brand
 					<input
@@ -62,6 +63,7 @@ export default function EditKeycap({ API }) {
 						value={keycaps.brand}
 					/>
 				</label>
+				<br />
 				<label>
 					Price
 					<input
@@ -72,6 +74,7 @@ export default function EditKeycap({ API }) {
 						value={keycaps.price}
 					/>
 				</label>
+				<br />
 				<label>
 					Color
 					<input
@@ -82,6 +85,7 @@ export default function EditKeycap({ API }) {
 						value={keycaps.color}
 					/>
 				</label>
+				<br />
 				<label>
 					Image
 					<input
@@ -91,7 +95,9 @@ export default function EditKeycap({ API }) {
 						onChange={handleChange}
 						value={keycaps.image}
 					/>
+					<img src={`${keycaps.image}`} alt={`${keycaps.name}`} />
 				</label>
+				<br />
 				<input type="submit" value="Submit" />
 			</form>
 		</div>

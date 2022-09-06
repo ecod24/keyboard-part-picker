@@ -105,6 +105,7 @@ export default function EditSwitch({ API }) {
 						onChange={handleChange}
 						value={keyswitch.image}
 					/>
+					<img src={`${keyswitch.image}`} alt={`${keyswitch.name}`} />
 				</label>
 				<input type="submit" value="Submit" />
 			</form>

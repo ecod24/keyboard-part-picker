@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Builder.css";
+import "../App.css";
 
 export default function Builder(props) {
 	const { currentBuild } = props;

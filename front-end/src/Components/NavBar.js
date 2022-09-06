@@ -7,7 +7,11 @@ export default function NavBar() {
 	const [current, setCurrent] = useState("home");
 	return (
 		<nav>
-			<Link to="/">
+			<Link
+				to="/"
+				onClick={() => setCurrent("home")}
+				className={current === "home" ? "selected" : null}
+			>
 				<img src="https://i.imgur.com/bojPyWU.png" alt="Home Logo" />
 			</Link>
 			<Link

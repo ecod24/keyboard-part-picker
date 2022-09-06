@@ -2,6 +2,7 @@ nav {
 	height: 100px;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+	border-bottom: 3px solid red;
 }
 nav img {
 	height: 100px;
