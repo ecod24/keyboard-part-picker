@@ -8,7 +8,7 @@ VALUES (
         'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronk8proqmkviawirelessmechanicalkeyboardformacwindowsosaprofilepbtkeycapspcbscrewinstabilizerwithhotswappablegaterongpromechanicalswitchcompatiblewithmxcherrypandakailhwithrgbbacklightaluminumframe-1645094681965.jpg?v=1645094684'
     ),
     ('Keychron Q1', 'Keychron', '75%', 159.99, 'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronq1v2custommechanicalkeyboard15-1658373808819.jpg?v=1658373894');
-INSERT INTO switches (name, brand, type, force, prelubed)
+INSERT INTO switches (name, brand, type, force, prelubed, image)
 VALUES (
         'Gateron Brown',
         'Gateron',
