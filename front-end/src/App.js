@@ -5,7 +5,6 @@ import Builds from "./Pages/Builds";
 import Guides from "./Pages/Guides";
 import NavBar from "./Components/NavBar";
 import Products from "./Pages/Products";
-// import Header from "./Components/Header";
 import Home from "./Pages/Home";
 import axios from "axios";
 import SwitchIndex from "./Pages/Switches/SwitchIndex";
