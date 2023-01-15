@@ -126,6 +126,15 @@ export default function Builder(props) {
 					</tr> */}
 				</tbody>
 			</table>
+			<div>
+				<h3>
+					{" "}
+					Total: $
+					{Object.entries(currentBuild).reduce((prev, current) => {
+						return prev + (current[1].price ? current[1].price : 0);
+					}, 0)}
+				</h3>
+			</div>
 		</div>
 	);
 }

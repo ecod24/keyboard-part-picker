@@ -40,7 +40,7 @@ export default function App() {
 			});
 	};
 	const removeFromCart = (key) => {
-		delete currentBuild[key];
+		setCurrentBuild({ ...currentBuild, [key]: null });
 	};
 	return (
 		<div>
