@@ -7,6 +7,18 @@
 		"pre-lubed": false
 	},
 	{
+		"name": "Gateron CJ",
+		"brand": "Gateron",
+		"type": "linear",
+		"top_housing": "Gateron Ink",
+		"bottom_housing": "POM",
+		"stem": "POM",
+		"travel-distance": 4,
+		"force": 50,
+		"three_pin": false,
+		"pre-lubed": false
+	},
+	{
 		"name": "Gateron Red",
 		"brand": "Gateron",
 		"type": "linear",

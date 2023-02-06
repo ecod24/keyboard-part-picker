@@ -16,6 +16,14 @@ const getKeyboard = async (id) => {
 	}
 };
 
+const searchForKeyboardByKeyword = async (query) => {
+	try {
+		return await db.any("SELECT * FROM keyboards WHERE name LIKE '%$1%'", query);
+	} catch (error) {
+		return error;
+	}
+};
+
 const createKeyboard = async (keyboard) => {
 	try {
 		let { name, brand, layout, price, image } = keyboard;
@@ -54,4 +62,5 @@ module.exports = {
 	createKeyboard,
 	updateKeyboard,
 	deleteKeyboard,
+	searchForKeyboardByKeyword,
 };

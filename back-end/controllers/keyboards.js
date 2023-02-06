@@ -5,6 +5,7 @@ const {
 	updateKeyboard,
 	createKeyboard,
 	deleteKeyboard,
+	searchForKeyboardByKeyword,
 } = require("../queries/keyboards");
 const keyboardController = express();
 
@@ -17,6 +18,23 @@ keyboardController.get("/", async (request, response) => {
 		});
 	} else {
 		response.status(500).json();
+	}
+});
+
+keyboardController.get("/search", async (request, response) => {
+	const { name } = request.query;
+	const searchResult = await searchForKeyboardByKeyword(name);
+	if (searchResult[0]) {
+		response.status(200).json({
+			success: true,
+			payload: searchResult,
+		});
+	} else {
+		response.status(500).json({
+			success: false,
+			query: name,
+			payload: searchResult,
+		});
 	}
 });
 

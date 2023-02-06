@@ -15,7 +15,12 @@ CREATE TABLE switches (
     name TEXT NOT NULL,
     brand TEXT NOT NULL,
     type TEXT NOT NULL,
+    top_housing TEXT,
+    bottom_housing TEXT,
+    stem TEXT,
+    travel_distance INT NOT NULL,
     force INT,
+    three_pin BOOL default true,
     prelubed BOOL default false,
     image TEXT
 );
