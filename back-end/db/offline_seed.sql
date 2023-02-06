@@ -1,14 +1,33 @@
 \c kbpp;
-INSERT INTO keyboards (name, brand, layout, price, image)
+INSERT INTO keyboards (name, brand, layout, price, image, color, description)
 VALUES (
         'Keychron K8 Pro',
         'Keychron',
         'TKL',
         89.99,
-        'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronk8proqmkviawirelessmechanicalkeyboardformacwindowsosaprofilepbtkeycapspcbscrewinstabilizerwithhotswappablegaterongpromechanicalswitchcompatiblewithmxcherrypandakailhwithrgbbacklightaluminumframe-1645094681965.jpg?v=1645094684'
-    ),
-    ('Keychron Q1', 'Keychron', '75%', 159.99, 'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronq1v2custommechanicalkeyboard15-1658373808819.jpg?v=1658373894');
-INSERT INTO switches (name, brand, type, top_housing, bottom_housing, stem, travel_distance, force, three_pin, prelubed, image)
+        'https://cdn.shopify.com/s/files/1/0059/0630/1017/t/5/assets/keychronk8proqmkviawirelessmechanicalkeyboardformacwindowsosaprofilepbtkeycapspcbscrewinstabilizerwithhotswappablegaterongpromechanicalswitchcompatiblewithmxcherrypandakailhwithrgbbacklightaluminumframe-1645094681965.jpg?v=1645094684',
+        'black',
+        'Keychron K8 Pro QMK/VIA Wireless Mechanical Keyboard allows anyone to master any keyboard keys or macro commands through VIA, it has included keycaps for both Windows and macOS, and users can hotswap with any MX mechanical switch in a breeze.'
+        ),
+        (
+        'Keychron Q1', 
+        'Keychron', 
+        '75%', 
+        159.99, 
+        'https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q1-75-percent-QMK-Custom-Mechanical-Keyboard-version-2-barebone-black_1800x1800.jpg?v=1671529187',
+        'black',
+        'A fully customizable 75% layout mechanical keyboard featured QMK / VIA support; designed with all the premium features with unlimited possibilities.'
+        ),
+        (
+        'Keychron Q1', 
+        'Keychron', 
+        '75%', 
+        159.99, 
+        'https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q1-75-percent-QMK-Custom-Mechanical-Keyboard-version-2-barebone-black_1800x1800.jpg?v=1671529187',
+        'black',
+        'A fully customizable 75% layout mechanical keyboard featured QMK / VIA support; designed with all the premium features with unlimited possibilities.'
+        );
+INSERT INTO switches (name, brand, type, top_housing, bottom_housing, stem, travel_distance, force, three_pin, prelubed, image, price_per_switch)
 VALUES (
         'Gateron CJ',
         'Gateron',
@@ -20,7 +39,8 @@ VALUES (
         50, 
         false,
         false,
-        'blank'
+        'https://cdn.shopify.com/s/files/1/0565/8070/2297/products/Gateron-CJ-Linear-Switch-Light-Blue_3000x.jpg',
+        .65
     ),
     (
         'Gateron Oil King',
@@ -33,7 +53,22 @@ VALUES (
         55,
         false,
         true,
-        'blank'
+        'https://cdn.shopify.com/s/files/1/0565/8070/2297/products/Gateron-Oil-King-Linear-Switch_3000x.jpg', 
+        .65
+    ),
+    (        
+        'Gateron Ink Black V2',
+        'Gateron',
+        'linear',
+        'Gateron Ink',
+        'Gateron Ink',
+        'POM',
+        4,
+        60,
+        false,
+        true,
+        'https://cdn.shopify.com/s/files/1/0565/8070/2297/products/Gateron-Ink-V2-Black-Switch_3000x.jpg', 
+        .75    
     );
 INSERT INTO keycaps (name, brand, price, color, image)
 VALUES (

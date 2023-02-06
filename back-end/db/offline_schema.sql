@@ -7,8 +7,10 @@ CREATE TABLE keyboards (
     name TEXT NOT NULL,
     brand TEXT NOT NULL,
     layout TEXT NOT NULL,
-    price INT, 
-    image TEXT
+    price FLOAT NOT NULL, 
+    image TEXT,
+    color TEXT default 'black',
+    description TEXT
 );
 CREATE TABLE switches (
     id SERIAL PRIMARY KEY,
@@ -19,10 +21,11 @@ CREATE TABLE switches (
     bottom_housing TEXT,
     stem TEXT,
     travel_distance INT NOT NULL,
-    force INT,
+    force INT NOT NULL,
     three_pin BOOL default true,
     prelubed BOOL default false,
-    image TEXT
+    image TEXT,
+    price_per_switch FLOAT NOT NULL
 );
 CREATE TABLE keycaps (
     id SERIAL PRIMARY KEY,
