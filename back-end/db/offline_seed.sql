@@ -70,18 +70,22 @@ VALUES (
         'https://cdn.shopify.com/s/files/1/0565/8070/2297/products/Gateron-Ink-V2-Black-Switch_3000x.jpg', 
         .75    
     );
-INSERT INTO keycaps (name, brand, price, color, image)
+INSERT INTO keycaps (name, brand, price, colors, profile, image, layout_compatibility)
 VALUES (
-        'AKKO WOB',
-        'AKKO',
+        'Akko WOB',
+        'Akko',
         59.99,
-        'white, black',
-        'blank'
+        'black, white',
+        'ASA',
+        'https://en.akkogear.com/wp-content/uploads/2021/08/White-On-Black-Keycap-Set.jpg',
+        '60%, 65%, 75%, TKL, 1800, 96%, 100%'
     ),
     (
-        'Keychron Shell White',
+        'Keychron Shell White Double Shot PBT',
         'Keychron',
         29.99,
         'white, black',
-        'blank'
+        'OSA',
+        'https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-double-shot-pbt-osa-keycaps-set-white_1800x1800.jpg?v=1660818357',
+        '60%, 65%, 70%, 75%, TKL, 96%, 100%'
     );
