@@ -1,7 +1,7 @@
 nav {
 	height: 100px;
 	display: grid;
-	grid-template-columns: auto 1fr;
+	/* grid-template-columns: auto auto; */
 	border-bottom: 1px solid gray;
 	/* text-align: center; */
 	background-color: aquamarine;

@@ -34,16 +34,13 @@ export default function Builder(props) {
 		setTotalPrice(
 			parseFloat(
 				Object.entries(currentBuild).reduce((prev, current) => {
-					return prev + (current[1]?.price ? current[1]?.price : 0);
+					return prev + (current[1]?.price ? parseFloat(current[1]?.price) : 0);
 				}, 0)
 			).toFixed(2)
 		);
 	}, [currentBuild, currentBuild.switches, currentBuild.keyboard]);
 	return (
 		<div className="partList">
-			<div>
-				<h3> Total: ${totalPrice}</h3>
-			</div>
 			<table>
 				<thead>
 					<tr>
@@ -184,6 +181,13 @@ export default function Builder(props) {
 					<tr>
 						<td>Add Custom Mods </td>
 					</tr> */}
+					<tr>
+						<td colSpan={2}></td>
+						<td>
+							{" "}
+							<h3> Total: ${totalPrice}</h3>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
