@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import "./Builder.scss";
 
 export default function Builder(props) {
-	const { currentBuild } = props;
+	const { currentBuild, removeFromCart } = props;
 	const [totalPrice, setTotalPrice] = useState(0);
 
 	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
@@ -21,7 +22,7 @@ export default function Builder(props) {
 		} else {
 			totalPriceForBoard = numOfKeys * pricePerSwitch;
 		}
-		return Number(totalPriceForBoard.toFixed(2));
+		return parseFloat(totalPriceForBoard).toFixed(2);
 	};
 	useEffect(() => {
 		if (currentBuild.keyboard && currentBuild.switches) {
@@ -31,13 +32,13 @@ export default function Builder(props) {
 			);
 		}
 		setTotalPrice(
-			Object.entries(currentBuild)
-				.reduce((prev, current) => {
+			parseFloat(
+				Object.entries(currentBuild).reduce((prev, current) => {
 					return prev + (current[1]?.price ? current[1]?.price : 0);
 				}, 0)
-				.toFixed(2)
+			).toFixed(2)
 		);
-	}, [currentBuild.switches, currentBuild.keyboard]);
+	}, [currentBuild, currentBuild.switches, currentBuild.keyboard]);
 	return (
 		<div className="partlist">
 			<div>
@@ -80,6 +81,12 @@ export default function Builder(props) {
 							)}{" "}
 						</td>
 						<td>{currentBuild.keyboard && <p>${currentBuild.keyboard.price}</p>}</td>
+						<td>
+							{/* TODO: find a button component that's clean.. I ain't got time for all that*/}
+							{currentBuild.keyboard && (
+								<button onClick={() => removeFromCart("keyboard")}>X</button>
+							)}
+						</td>
 					</tr>
 					<tr>
 						<td>
@@ -118,6 +125,12 @@ export default function Builder(props) {
 								</p>
 							)}
 						</td>
+						<td>
+							{/* TODO: find a button component that's clean.. I ain't got time for all that*/}
+							{currentBuild.switches && (
+								<button onClick={() => removeFromCart("switches")}>X</button>
+							)}
+						</td>
 					</tr>
 					<tr>
 						<td>
@@ -150,6 +163,12 @@ export default function Builder(props) {
 								""
 							) : (
 								<p>${currentBuild.keycaps.price}</p>
+							)}
+						</td>
+						<td>
+							{/* TODO: find a button component that's clean.. I ain't got time for all that*/}
+							{currentBuild.keycaps && (
+								<button onClick={() => removeFromCart("keycaps")}>X</button>
 							)}
 						</td>
 					</tr>

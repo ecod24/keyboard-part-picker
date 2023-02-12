@@ -1,4 +1,8 @@
 .build-guide img {
-	max-width: 100px;
 	padding: 5px;
+	max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }

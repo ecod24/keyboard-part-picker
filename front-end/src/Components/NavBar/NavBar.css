@@ -1,19 +1,28 @@
 nav {
 	height: 100px;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: auto 1fr;
 	border-bottom: 1px solid gray;
 	/* text-align: center; */
 	background-color: aquamarine;
 }
 nav div {
-	margin: 0;
+	display: grid;
+	grid-template-columns: auto auto auto auto 1fr;
+	margin: auto;
 	padding: 5px;
 	text-align: center;
+	align-items: center;
 	/* justify-content: center; */
+}
+.navWrapper a {
+	margin: auto;
+	padding: 10%;
+	align-items: center;
 }
 nav img {
 	max-height: 80px;
+	width: 70%;
 }
 a {
 	color: black;
@@ -22,15 +31,15 @@ a {
 	font-size: 20px;
 	/* text-align: center; */
 }
-nav div:hover {
+.navWrapper a:hover {
 	background-color: rgb(240, 240, 255);
 	cursor: pointer;
 	transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
 }
-nav div.selected {
+.navWrapper a.selected {
 	background-color: rgba(135, 177, 214, 0.91);
 }
-nav div.selected:hover {
+.navWrapper a.selected:hover {
 	background-color: rgb(135, 177, 214);
 	transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
 }
