@@ -40,7 +40,7 @@ export default function Builder(props) {
 		);
 	}, [currentBuild, currentBuild.switches, currentBuild.keyboard]);
 	return (
-		<div className="partlist">
+		<div className="partList">
 			<div>
 				<h3> Total: ${totalPrice}</h3>
 			</div>
