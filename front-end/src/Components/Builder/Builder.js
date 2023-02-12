@@ -1,20 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
 export default function Builder(props) {
 	const { currentBuild } = props;
+	const [totalPrice, setTotalPrice] = useState(0);
 
+	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
+		//TODO: all layouts
+		let numOfKeys = 108; //default 100%
+		let totalPriceForBoard = 0.0;
+		if (layout === "60%") {
+			totalPriceForBoard = 65 * pricePerSwitch;
+		} else if (layout === "65%") {
+			totalPriceForBoard = 68 * pricePerSwitch;
+		} else if (layout === "TKL") {
+			totalPriceForBoard = 87 * pricePerSwitch;
+		} else if (layout === "75%") {
+			totalPriceForBoard = 84 * pricePerSwitch;
+		} else {
+			totalPriceForBoard = numOfKeys * pricePerSwitch;
+		}
+		return Number(totalPriceForBoard.toFixed(2));
+	};
+	useEffect(() => {
+		if (currentBuild.keyboard && currentBuild.switches) {
+			currentBuild.switches["price"] = calculateSwitchPrices(
+				currentBuild.keyboard.layout,
+				currentBuild.switches.price_per_switch
+			);
+		}
+		setTotalPrice(
+			Object.entries(currentBuild)
+				.reduce((prev, current) => {
+					return prev + (current[1]?.price ? current[1]?.price : 0);
+				}, 0)
+				.toFixed(2)
+		);
+	}, [currentBuild.switches, currentBuild.keyboard]);
 	return (
 		<div className="partlist">
 			<div>
-				<h3>
-					{" "}
-					Total: $
-					{Object.entries(currentBuild).reduce((prev, current) => {
-						return prev + (current[1]?.price ? current[1]?.price : 0);
-					}, 0)}
-				</h3>
+				<h3> Total: ${totalPrice}</h3>
 			</div>
 			<table>
 				<thead>
@@ -78,6 +105,17 @@ export default function Builder(props) {
 										{currentBuild.switches.name}
 									</Link>
 								</div>
+							)}
+						</td>
+						<td>
+							{currentBuild.switches && currentBuild.keyboard && (
+								<p>
+									$
+									{calculateSwitchPrices(
+										currentBuild.keyboard.layout,
+										currentBuild.switches.price_per_switch
+									)}
+								</p>
 							)}
 						</td>
 					</tr>
