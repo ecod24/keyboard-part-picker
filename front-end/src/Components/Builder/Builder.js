@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
+import "../../App.css";
 
 export default function Builder(props) {
 	const { currentBuild } = props;
@@ -46,19 +46,13 @@ export default function Builder(props) {
 											alt="keyboard-icon"
 										/>
 									</Link>
-									<Link to={`/products/keyboards/${currentBuild.keyboard.id}`}>
+									<Link to={`/products/keyboards/${currentBuild.keyboard?.id}`}>
 										{currentBuild.keyboard.name}
 									</Link>
 								</div>
 							)}{" "}
 						</td>
-						<td>
-							{currentBuild.keyboard === null ? (
-								""
-							) : (
-								<p>${currentBuild.keyboard.price}</p>
-							)}
-						</td>
+						<td>{currentBuild.keyboard && <p>${currentBuild.keyboard.price}</p>}</td>
 					</tr>
 					<tr>
 						<td>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Keyswitch from "../../Components/Keyswitch";
+import Keyswitch from "../../Components/Keyswitch/Keyswitch";
 import { Link } from "react-router-dom";
 
 export default function SwitchIndex({ API, currentBuild, setCurrentBuild }) {

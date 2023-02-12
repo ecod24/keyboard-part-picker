@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Builder from "./Builder";
+import Builder from "../Components/Builder/Builder";
 import "./Guides.css";
 
 export default function Guides({ API }) {
@@ -41,11 +41,11 @@ export default function Guides({ API }) {
 			(WORK IN PROGRESS)
 			<h2>The "Best Budget Build in the World"</h2>
 			<p>
-				Simple. Best value switches, best value keyboard, and your choice of switches. We've
+				Simple. Best value switches, best value keyboard, and your choice of keycaps. We've
 				provided our pick for a good value pickup that doesn't break the bank.
 			</p>
-			<Builder API={API} currentBuild={{ ...keyboard, ...keycaps, ...switches }} />
-			{/* <div>
+			{/* <Builder currentBuild={{ ...keyboard, ...keycaps, ...switches }} /> */}
+			<div>
 				<table>
 					<thead>
 						<tr>
@@ -97,8 +97,7 @@ export default function Guides({ API }) {
 					</tbody>
 				</table>
 			</div>
-		
-	); */}
+			);
 		</div>
 	);
 }

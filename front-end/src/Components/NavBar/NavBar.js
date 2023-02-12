@@ -7,8 +7,7 @@ export default function NavBar() {
 	const [current, setCurrent] = useState("home");
 	return (
 		<nav>
-			<div>
-
+			<div className={current === "home" ? "selected" : null}>
 				<Link
 					to="/"
 					onClick={() => setCurrent("home")}
@@ -17,8 +16,7 @@ export default function NavBar() {
 					<img src="https://i.imgur.com/bojPyWU.png" alt="Home Logo" />
 				</Link>
 			</div>
-			<div>
-
+			<div className={current === "list" ? "selected" : null}>
 				<Link
 					to="/list"
 					onClick={() => setCurrent("list")}
@@ -27,8 +25,7 @@ export default function NavBar() {
 					Keyboard Builder
 				</Link>
 			</div>
-			<div>
-
+			<div className={current === "guides" ? "selected" : null}>
 				<Link
 					to="/guides"
 					onClick={() => setCurrent("guides")}
@@ -37,8 +34,7 @@ export default function NavBar() {
 					Build Guides
 				</Link>
 			</div>
-			<div>
-				{" "}
+			<div className={current === "builds" ? "selected" : null}>
 				<Link
 					to="/builds"
 					onClick={() => setCurrent("builds")}
@@ -46,9 +42,8 @@ export default function NavBar() {
 				>
 					Completed Builds
 				</Link>
-			</div>{" "}
-			<div>
-				{" "}
+			</div>
+			<div className={current === "products" ? "selected" : null}>
 				<Link
 					to="/products"
 					onClick={() => setCurrent("products")}

@@ -16,12 +16,12 @@ export default function ShowSwitch({ API }) {
 			.catch((error) => {
 				console.warn(error);
 			});
-	});
+	}, []);
 	return (
 		<div>
 			<h1>{switchInfo.name}</h1>
 			<p>{switchInfo.brand}</p>
-			<h2>${switchInfo.price}</h2>
+			<h2>${switchInfo.price_per_switch} per switch</h2>
 			<img
 				src={`${
 					switchInfo.image !== "blank"

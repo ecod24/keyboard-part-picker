@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router";
-import Builder from "./Pages/Builder";
+import Builder from "./Components/Builder/Builder";
 import Builds from "./Pages/Builds";
 import Guides from "./Pages/Guides";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import Products from "./Pages/Products";
 import Home from "./Pages/Home";
 import axios from "axios";
@@ -53,7 +53,6 @@ export default function App() {
 					path="/list"
 					element={
 						<Builder
-							API={API}
 							currentBuild={currentBuild}
 							setCurrentBuild={setCurrentBuild}
 							removeFromCart={removeFromCart}

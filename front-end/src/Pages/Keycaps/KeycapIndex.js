@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Keycaps from "../../Components/Keycaps";
+import Keycaps from "../../Components/Keycaps/Keycaps";
 import { Link } from "react-router-dom";
 
 export default function KeycapIndex({ API, currentBuild, setCurrentBuild }) {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Keyboard from "../../Components/Keyboard";
+import Keyboard from "../../Components/Keyboard/Keyboard";
 import { Link } from "react-router-dom";
 
 export default function KeyboardIndex({ API, currentBuild, setCurrentBuild }) {
