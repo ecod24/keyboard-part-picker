@@ -26,10 +26,10 @@ const searchForKeyboardByKeyword = async (query) => {
 
 const createKeyboard = async (keyboard) => {
 	try {
-		let { name, brand, layout, price, image } = keyboard;
+		let { name, brand, layout, price, image, color, description } = keyboard;
 		return await db.one(
-			"INSERT INTO keyboards (name, brand, layout, price, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-			[name, brand, layout, price, image]
+			"INSERT INTO keyboards (name, brand, layout, price, image, color, description) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+			[name, brand, layout, price, image, color, description]
 		);
 	} catch (error) {
 		return error;
@@ -37,11 +37,11 @@ const createKeyboard = async (keyboard) => {
 };
 
 const updateKeyboard = async (id, keyboard) => {
-	let { name, brand, layout, price, image } = keyboard;
+	let { name, brand, layout, price, image, color, description } = keyboard;
 	try {
 		return await db.one(
-			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4, image=$5 WHERE id=$6 RETURNING *",
-			[name, brand, layout, price, image, id]
+			"UPDATE keyboards SET name=$1, brand=$2, layout=$3, price=$4, image=$5, color=$6, description=$7 WHERE id=$8 RETURNING *",
+			[name, brand, layout, price, image, color, description, id]
 		);
 	} catch (error) {
 		return error;

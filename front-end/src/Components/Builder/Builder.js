@@ -32,7 +32,7 @@ export default function Builder(props) {
 			currentBuild.switches.id,
 			totalPrice
 		);
-		//now actually post to /
+		//now actually post to /builds
 		//go to completed builds (where this will be the newest item)
 	};
 	useEffect(() => {
