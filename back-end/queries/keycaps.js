@@ -17,11 +17,10 @@ const getKeycap = async (id) => {
 
 const createKeycap = async (keycap) => {
 	try {
-		let { name, brand, price, color, image } = keycap;
-		//TODO: defaults logic here
+		let { name, brand, price, colors, profile, image, layout_compatibility } = keycap;
 		return await db.one(
-			"INSERT INTO keycaps (name, brand, price, color, image) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-			[name, brand, price, color, image]
+			"INSERT INTO keycaps (name, brand, price, colors, profile, image, layout_compatibility) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+			[name, brand, price, colors, profile, image, layout_compatibility]
 		);
 	} catch (error) {
 		return error;
@@ -29,11 +28,11 @@ const createKeycap = async (keycap) => {
 };
 
 const updateKeycap = async (id, keycap) => {
-	let { name, brand, price, color, image } = keycap;
+	let { name, brand, price, colors, profile, image, layout_compatibility } = keycap;
 	try {
 		return await db.one(
-			"UPDATE keycaps SET name=$1, brand=$2, price=$3, color=$4, image=$5 WHERE id=$6 RETURNING *",
-			[name, brand, price, color, image, id]
+			"UPDATE keycaps SET name=$1, brand=$2, price=$3, colors=$4, profile=$5, image=$6, layout_compatibility=$7 WHERE id=$8 RETURNING *",
+			[name, brand, price, colors, profile, image, layout_compatibility, id]
 		);
 	} catch (error) {
 		return error;
