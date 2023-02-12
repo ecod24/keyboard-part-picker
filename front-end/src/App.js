@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router";
 import Builder from "./Components/Builder/Builder";
 import Builds from "./Pages/Builds";
@@ -29,6 +29,7 @@ export default function App() {
 		keycaps: null,
 		switches: null,
 	});
+	const [completedBuild, setCompletedBuild] = useState(false);
 	const deleteItem = (id, type) => {
 		axios
 			.delete(`${API}/${type}/${id}`)
@@ -42,6 +43,13 @@ export default function App() {
 	const removeFromCart = (key) => {
 		setCurrentBuild({ ...currentBuild, [key]: null });
 	};
+	useEffect(() => {
+		if (currentBuild.keyboard && currentBuild.keycaps && currentBuild.switches) {
+			setCompletedBuild(true);
+		} else {
+			setCompletedBuild(false);
+		}
+	}, [currentBuild.switches, currentBuild.keyboard, currentBuild.keycaps]);
 	return (
 		<div>
 			{/* <Header /> */}
@@ -56,6 +64,7 @@ export default function App() {
 							currentBuild={currentBuild}
 							setCurrentBuild={setCurrentBuild}
 							removeFromCart={removeFromCart}
+							completedBuild={completedBuild}
 						/>
 					}
 				/>

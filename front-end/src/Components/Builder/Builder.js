@@ -4,7 +4,7 @@ import "../../App.css";
 import "./Builder.scss";
 
 export default function Builder(props) {
-	const { currentBuild, removeFromCart } = props;
+	const { currentBuild, removeFromCart, completedBuild } = props;
 	const [totalPrice, setTotalPrice] = useState(0);
 
 	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
@@ -23,6 +23,17 @@ export default function Builder(props) {
 			totalPriceForBoard = numOfKeys * pricePerSwitch;
 		}
 		return parseFloat(totalPriceForBoard).toFixed(2);
+	};
+	const submitBuild = () => {
+		console.log(
+			"submitting Keyboard id %d, keycaps id %d, switches id %d, and total price %f",
+			currentBuild.keyboard.id,
+			currentBuild.keycaps.id,
+			currentBuild.switches.id,
+			totalPrice
+		);
+		//now actually post to /
+		//go to completed builds (where this will be the newest item)
 	};
 	useEffect(() => {
 		if (currentBuild.keyboard && currentBuild.switches) {
@@ -190,6 +201,7 @@ export default function Builder(props) {
 					</tr>
 				</tbody>
 			</table>
+			{completedBuild && <button onClick={() => submitBuild()}>Submit Build</button>}
 		</div>
 	);
 }
