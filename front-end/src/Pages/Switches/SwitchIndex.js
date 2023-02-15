@@ -28,6 +28,7 @@ export default function SwitchIndex({ API, currentBuild, setCurrentBuild }) {
 						<th>Type</th>
 						<th>Force</th>
 						<th>Pre-Lubed</th>
+						<th>Price (per switch)</th>
 					</tr>
 				</thead>
 				<tbody>

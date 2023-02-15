@@ -13,16 +13,19 @@ export default function Keyswitch({ info, currentBuild, setCurrentBuild }) {
 				<Link to={`/products/switches/${info.id}`}>{info.name}</Link>
 			</td>
 			<td>
-				<p>{info.brand}</p>
+				{info.brand}
 			</td>
 			<td>
-				<p>{info.type}</p>
+				{info.type}
 			</td>
 			<td>
-				<p>{info.force}g</p>
+				{info.force}g
 			</td>
 			<td>
-				<p>{info.prelubed ? "Yes" : "No"}</p>
+				{info.prelubed ? "Yes" : "No"}
+			</td>
+			<td>
+				${info.price_per_switch}
 			</td>
 			<td>
 				<button
