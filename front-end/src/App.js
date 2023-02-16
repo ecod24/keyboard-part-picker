@@ -52,9 +52,7 @@ export default function App() {
 	}, [currentBuild.switches, currentBuild.keyboard, currentBuild.keycaps]);
 	return (
 		<div>
-			{/* <Header /> */}
 			<NavBar />
-			{/* <Outlet /> */}
 			<Routes>
 				<Route path="/" element={<Home API={API} deleteItem={deleteItem} />} />
 				<Route

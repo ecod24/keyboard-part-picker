@@ -37,3 +37,18 @@ CREATE TABLE keycaps (
     image TEXT default 'blank',
     layout_compatibility TEXT
 );
+CREATE TABLE users (
+    id serial primary key,
+    email text not null,
+    password text not null
+);
+CREATE TABLE builds (
+    id serial primary key,
+    title text,
+    keyboard_id int references keyboards(id),
+    switches_id int references switches(id),
+    keycaps_id int references keycaps(id),
+    builder_id int references users(id),
+    total_price int not null,
+    images text not null
+);
