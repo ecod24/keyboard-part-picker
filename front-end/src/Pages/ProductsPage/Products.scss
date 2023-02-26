@@ -1,0 +1,24 @@
+.products {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 15px;
+	&__title {
+		text-align: center;
+	}
+	&__categoryContainer {
+		display: grid;
+		grid-template-rows: 1fr 2fr;
+		padding: 15px;
+		margin: 20px;
+	}
+}
+img {
+	max-width: 50%;
+	display: block;
+	// width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1 {
+	text-align: center;
+}

@@ -4,7 +4,7 @@ import Builder from "./Components/Builder/Builder";
 import Builds from "./Pages/Builds";
 import Guides from "./Pages/Guides";
 import NavBar from "./Components/NavBar/NavBar";
-import Products from "./Pages/Products";
+import Products from "./Pages/ProductsPage/Products";
 import Home from "./Pages/Home";
 import axios from "axios";
 import SwitchIndex from "./Pages/Switches/SwitchIndex";
