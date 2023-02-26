@@ -1,0 +1,20 @@
+.showKeycap {
+	padding: 15px;
+	&__image {
+		padding: 30px;
+		max-width: 240px;
+		max-height: 240px;
+	}
+	&__name,
+	&__brand,
+	&__price,
+	&__colors {
+		padding: 5px;
+		text-align: center;
+		font-size: larger;
+	}
+	&__buttonsContainer {
+		padding: 5px;
+		text-align: center;
+	}
+}

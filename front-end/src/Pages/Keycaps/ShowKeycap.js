@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import "./ShowKeycap.scss";
 
 export default function ShowKeycap({ API }) {
 	const navigate = useNavigate();
@@ -18,11 +19,12 @@ export default function ShowKeycap({ API }) {
 			});
 	}, []);
 	return (
-		<div>
-			<h1>{keycapInfo.name}</h1>
-			<p>{keycapInfo.brand}</p>
-			<h2>${keycapInfo.price}</h2>
+		<div className="showKeycap">
+			<div className="showKeycap__name">{keycapInfo.name}</div>
+			<div className="showKeycap__brand">{keycapInfo.brand}</div>
+			<div className="showKeycap__price">${keycapInfo.price}</div>
 			<img
+				className="showKeycap__image"
 				src={`${
 					keycapInfo.image !== "blank"
 						? keycapInfo.image
@@ -30,20 +32,13 @@ export default function ShowKeycap({ API }) {
 				}`}
 				alt="its probably a keycap set"
 			/>
-			<Link to="/products/keycaps">
-				<button>All Keycaps</button>
-			</Link>
-			<Link to={`/products/keycaps/${id}/edit`}>
-				<button>Edit Info</button>
-			</Link>
-			<button
-				onClick={() => {
-					axios.delete(`${API}/keycaps/${id}`);
-					navigate("/products/keycaps");
-				}}
-			>
-				Delete
-			</button>
+			<div className="showKeycap__colors">Colors in Set: {keycapInfo.colors}</div>
+			<div className="showKeycap__buttonsContainer">
+				<Link to="/products/keycaps">
+					<button>See all keycaps</button>
+				</Link>
+
+			</div>
 		</div>
 	);
 }

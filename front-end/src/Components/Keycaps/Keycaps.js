@@ -15,7 +15,7 @@ export default function Keycaps({ info, currentBuild, setCurrentBuild }) {
 				<p>{info.brand}</p>
 			</td>
 			<td>
-				<p>{info.color}</p>
+				<p>{info.colors}</p>
 			</td>
 			<td>
 				<p>${info.price}</p>
