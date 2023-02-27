@@ -44,7 +44,7 @@ CREATE TABLE users (
 );
 CREATE TABLE builds (
     id serial primary key,
-    title text,
+    title text default 'Custom Keyboard Build',
     keyboard_id int references keyboards(id),
     switches_id int references switches(id),
     keycaps_id int references keycaps(id),
