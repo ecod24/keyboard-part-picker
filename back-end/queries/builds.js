@@ -30,7 +30,7 @@ const createBuild = async (build) => {
 
 const updateBuild = async (build, id) => {
 	try {
-		let { title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images } =
+		let { title, keyboard_id, switches_id, keycaps_id, total_price, images } =
 			build;
 		return await db.one(
 			`UPDATE builds SET title=${title}, keyboard_id=${keyboard_id}, switches_id=${switches_id}, keycaps_id=${keycaps_id}, total_price=${total_price}, images=${images} WHERE id=${id} RETURNING *`

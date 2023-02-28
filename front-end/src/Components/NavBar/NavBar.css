@@ -36,10 +36,10 @@ a {
 	cursor: pointer;
 	transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
 }
-.navWrapper a.selected {
+/* .navWrapper a.selected {
 	background-color: rgba(135, 177, 214, 0.91);
 }
 .navWrapper a.selected:hover {
 	background-color: rgb(135, 177, 214);
 	transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
-}
+} */
