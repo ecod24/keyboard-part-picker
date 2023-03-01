@@ -30,8 +30,7 @@ const createBuild = async (build) => {
 
 const updateBuild = async (build, id) => {
 	try {
-		let { title, keyboard_id, switches_id, keycaps_id, total_price, images } =
-			build;
+		let { title, keyboard_id, switches_id, keycaps_id, total_price, images } = build;
 		return await db.one(
 			`UPDATE builds SET title=${title}, keyboard_id=${keyboard_id}, switches_id=${switches_id}, keycaps_id=${keycaps_id}, total_price=${total_price}, images=${images} WHERE id=${id} RETURNING *`
 		);
@@ -40,7 +39,7 @@ const updateBuild = async (build, id) => {
 	}
 };
 
-const deleteKeyboard = async (id) => {
+const deleteBuild = async (id) => {
 	try {
 		return await db.one(`DELETE FROM builds WHERE id=${id} RETURNING *`);
 	} catch (error) {
@@ -48,10 +47,42 @@ const deleteKeyboard = async (id) => {
 	}
 };
 
+const getBuildsByUserID = async (id) => {
+	try {
+		return await db.any(`SELECT * FROM builds WHERE builder_id=${id}`);
+	} catch (error) {
+		return error;
+	}
+};
+const getBuildsByKeyboardID = async (id) => {
+	try {
+		return await db.any(`SELECT * FROM builds WHERE keyboard_id=${id}`);
+	} catch (error) {
+		return error;
+	}
+};
+const getBuildsBySwitchesID = async (id) => {
+	try {
+		return await db.any(`SELECT * FROM builds WHERE switches_id=${id}`);
+	} catch (error) {
+		return error;
+	}
+};
+const getBuildsByKeycapsID = async (id) => {
+	try {
+		return await db.any(`SELECT * FROM builds WHERE keycaps_id=${id}`);
+	} catch (error) {
+		return error;
+	}
+};
 module.exports = {
 	getAllBuilds,
 	getBuild,
 	createBuild,
 	updateBuild,
-	deleteKeyboard,
+	deleteBuild,
+	getBuildsByUserID,
+	getBuildsByKeyboardID,
+	getBuildsBySwitchesID,
+	getBuildsByKeycapsID,
 };

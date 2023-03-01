@@ -4,6 +4,7 @@ const cors = require("cors");
 const keyboardsController = require("./controllers/keyboards");
 const switchesController = require("./controllers/switches");
 const keycapsController = require("./controllers/keycaps");
+const buildsController = require("./controllers/builds");
 
 app.use(cors());
 app.use(express.json());
@@ -15,6 +16,7 @@ app.get("/", (request, response) => {
 app.use("/keycaps", keycapsController);
 app.use("/keyboards", keyboardsController);
 app.use("/switches", switchesController);
+app.use("/builds", buildsController);
 
 app.get("*", (request, response) => {
 	response.status(404).json({ status: "this route does not exist. please try again" });
