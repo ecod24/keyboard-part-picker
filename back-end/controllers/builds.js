@@ -137,3 +137,5 @@ buildsController.delete("/:id", async (request, response) => {
 		});
 	}
 });
+
+module.exports = buildsController;

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../App.css";
 import "./Builder.scss";
+import axios from "axios";
 
 export default function Builder(props) {
-	const { currentBuild, removeFromCart, completedBuild } = props;
+	const { currentBuild, removeFromCart, completedBuild, API } = props;
 	const [totalPrice, setTotalPrice] = useState(0);
+	const navigate = useNavigate();
 
 	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
 		//TODO: all layouts
@@ -33,7 +35,22 @@ export default function Builder(props) {
 			totalPrice
 		);
 		//now actually post to /builds
-		//go to completed builds (where this will be the newest item)
+		const buildInformation = {
+			builder_id: 1,
+			keyboard_id: currentBuild.keyboard.id,
+			switches_id: currentBuild.switches.id,
+			keycaps_id: currentBuild.keycaps.id,
+			title: "test",
+			total_price: totalPrice,
+			images: "blank",
+		};
+		axios
+			.post(`${API}/builds`, buildInformation)
+			.then(() => {
+				//go to completed builds (where this will be the newest item)
+				navigate("/builds");
+			})
+			.catch((err) => console.log(err));
 	};
 	useEffect(() => {
 		if (currentBuild.keyboard && currentBuild.switches) {
@@ -201,7 +218,7 @@ export default function Builder(props) {
 					</tr>
 				</tbody>
 			</table>
-			{completedBuild && <button onClick={() => submitBuild()}>Submit Build</button>}
+			{completedBuild && <button onClick={submitBuild}>Submit Build</button>}
 		</div>
 	);
 }

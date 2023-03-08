@@ -59,6 +59,7 @@ export default function App() {
 					path="/list"
 					element={
 						<Builder
+							API={API}
 							currentBuild={currentBuild}
 							setCurrentBuild={setCurrentBuild}
 							removeFromCart={removeFromCart}
