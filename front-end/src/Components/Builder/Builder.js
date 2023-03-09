@@ -11,16 +11,18 @@ export default function Builder(props) {
 
 	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
 		//TODO: all layouts
-		let numOfKeys = 108; //default 100%
+		let numOfKeys = 104; //default 100%
 		let totalPriceForBoard = 0.0;
 		if (layout === "60%") {
-			totalPriceForBoard = 65 * pricePerSwitch;
+			totalPriceForBoard = 61 * pricePerSwitch;
 		} else if (layout === "65%") {
 			totalPriceForBoard = 68 * pricePerSwitch;
-		} else if (layout === "TKL") {
-			totalPriceForBoard = 87 * pricePerSwitch;
 		} else if (layout === "75%") {
 			totalPriceForBoard = 84 * pricePerSwitch;
+		} else if (layout === "TKL") {
+			totalPriceForBoard = 87 * pricePerSwitch;
+		} else if (layout === "96%") {
+			totalPriceForBoard = 96 * pricePerSwitch;
 		} else {
 			totalPriceForBoard = numOfKeys * pricePerSwitch;
 		}

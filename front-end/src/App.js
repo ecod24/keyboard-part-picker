@@ -68,7 +68,7 @@ export default function App() {
 					}
 				/>
 				<Route path="/guides" element={<Guides API={API} />} />
-				<Route path="/builds" element={<Builds API={API} />} />
+				<Route path="/builds" element={<Builds API={API} />} />qq
 				<Route path="/products" element={<Products API={API} />} />
 				<Route
 					path="/products/switches"
