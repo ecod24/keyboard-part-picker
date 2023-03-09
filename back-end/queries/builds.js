@@ -21,10 +21,11 @@ const createBuild = async (build) => {
 		let { title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images } =
 			build;
 		return await db.one(
-			`INSERT INTO builds (title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images) VALUES (${title}, ${keyboard_id}, ${switches_id}, ${keycaps_id}, ${builder_id}, ${total_price}, ${images}) RETURNING *`
+			`INSERT INTO builds (title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images) VALUES ('${title}', ${keyboard_id}, ${switches_id}, ${keycaps_id}, ${builder_id}, ${total_price}, '${images}') RETURNING *`
 		);
 	} catch (error) {
-		return error;
+		console.log(error);
+		throw error;
 	}
 };
 
@@ -32,7 +33,7 @@ const updateBuild = async (build, id) => {
 	try {
 		let { title, keyboard_id, switches_id, keycaps_id, total_price, images } = build;
 		return await db.one(
-			`UPDATE builds SET title=${title}, keyboard_id=${keyboard_id}, switches_id=${switches_id}, keycaps_id=${keycaps_id}, total_price=${total_price}, images=${images} WHERE id=${id} RETURNING *`
+			`UPDATE builds SET title='${title}', keyboard_id=${keyboard_id}, switches_id=${switches_id}, keycaps_id=${keycaps_id}, total_price=${total_price}, images='${images}' WHERE id=${id} RETURNING *`
 		);
 	} catch (error) {
 		return error;
