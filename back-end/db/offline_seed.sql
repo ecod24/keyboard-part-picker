@@ -180,3 +180,33 @@ VALUES (
         'https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-double-shot-pbt-osa-keycaps-set-white_1800x1800.jpg?v=1660818357',
         '60%, 65%, 70%, 75%, TKL, 96%, 100%'
     );
+INSERT INTO users (email, password) 
+VALUES 
+(
+    'anon@kbpp.com',
+    'asdf'
+), 
+(
+    'testuser1@kbpp.com',
+    'asdf'
+);
+INSERT INTO builds (title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images)
+VALUES 
+(
+    'Build Guide Default Build',
+    1,
+    1,
+    1,
+    1,
+    154.33,
+    'blank'
+),
+(
+    'Bose Q1',
+    1,
+    1,
+    1,
+    2,
+    300.34,
+    'blank'
+);
