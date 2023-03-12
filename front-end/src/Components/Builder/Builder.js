@@ -8,7 +8,12 @@ export default function Builder(props) {
 	const { currentBuild, removeFromCart, completedBuild, API } = props;
 	const [totalPrice, setTotalPrice] = useState(0);
 	const navigate = useNavigate();
-
+	/**
+	 *
+	 * @param {string} layout - string representation of keyboard layout (60%, 75%, TKL, etc)
+	 * @param {Float} pricePerSwitch - price of a single switch
+	 * @returns String formatted price of a build's worth of switches
+	 */
 	const calculateSwitchPrices = (layout = "100%", pricePerSwitch) => {
 		//TODO: all layouts
 		let numOfKeys = 104; //default 100%

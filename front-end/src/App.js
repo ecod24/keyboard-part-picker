@@ -19,6 +19,7 @@ import NewKeycap from "./Pages/Keycaps/NewKeycap";
 import EditKeycap from "./Pages/Keycaps/EditKeycap";
 import KeycapIndex from "./Pages/Keycaps/KeycapIndex";
 import ShowKeycap from "./Pages/Keycaps/ShowKeycap";
+import Footer from "./Components/Footer/Footer";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -68,7 +69,8 @@ export default function App() {
 					}
 				/>
 				<Route path="/guides" element={<Guides API={API} />} />
-				<Route path="/builds" element={<Builds API={API} />} />qq
+				<Route path="/builds" element={<Builds API={API} />} />
+				qq
 				<Route path="/products" element={<Products API={API} />} />
 				<Route
 					path="/products/switches"
@@ -83,7 +85,6 @@ export default function App() {
 				<Route path="/products/switches/new" element={<NewSwitch API={API} />} />
 				<Route path="/products/switches/:id" element={<ShowSwitch API={API} />} />
 				<Route path="/products/switches/:id/edit" element={<EditSwitch API={API} />} />
-
 				<Route
 					path="/products/keycaps"
 					element={
@@ -97,7 +98,6 @@ export default function App() {
 				<Route path="/products/keycaps/new" element={<NewKeycap API={API} />} />
 				<Route path="/products/keycaps/:id" element={<ShowKeycap API={API} />} />
 				<Route path="/products/keycaps/:id/edit" element={<EditKeycap API={API} />} />
-
 				<Route
 					path="/products/keyboards"
 					element={
@@ -112,6 +112,7 @@ export default function App() {
 				<Route path="/products/keyboards/:id" element={<ShowKeyboard API={API} />} />
 				<Route path="/products/keyboards/:id/edit" element={<EditKeyboard API={API} />} />
 			</Routes>
+			<Footer />
 		</div>
 	);
 }
