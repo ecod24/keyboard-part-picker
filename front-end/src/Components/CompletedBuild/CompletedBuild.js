@@ -28,7 +28,11 @@ function CompletedBuild({ buildInfo, API }) {
 			<Link to={`/builds/${id}`}>
 				<img
 					class="container__image"
-					src="https://www.popsci.com/uploads/2022/02/12/mechanical-keyboard-with-rbg.jpg?auto=webp&width=1440&height=1080"
+					src={
+						images !== "blank"
+							? images
+							: "https://www.popsci.com/uploads/2022/02/12/mechanical-keyboard-with-rbg.jpg?auto=webp&width=1440&height=1080"
+					}
 					alt={`Picture of build: ${title}`}
 				/>
 			</Link>
