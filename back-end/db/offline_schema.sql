@@ -49,6 +49,6 @@ CREATE TABLE builds (
     switches_id int references switches(id),
     keycaps_id int references keycaps(id),
     builder_id int references users(id),
-    total_price int not null,
+    total_price float not null,
     images text not null
 );
