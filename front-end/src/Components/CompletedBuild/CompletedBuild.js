@@ -55,6 +55,10 @@ function CompletedBuild({ buildInfo, API }) {
 					{" "}
 					<span class="container__category">Price: </span> ${total_price}
 				</div>
+				<div class="container__singleDetail">
+					<span className="container__category">Built By:</span>{" "}
+					{builder_id === 1 ? "anonymous" : `Builder number ${builder_id}`}
+				</div>
 			</div>
 		</div>
 	);

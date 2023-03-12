@@ -12,10 +12,13 @@ export default function Builds({ API }) {
 			.catch((error) => console.log(error));
 	});
 	return (
-		<div className="completedBuilds">
-			{builds.map((build) => {
-				return <CompletedBuild buildInfo={build} API={API} />;
-			})}
-		</div>
+		<>
+			<div className="completedBuildsTitle">Completed Builds</div>
+			<div className="completedBuilds">
+				{builds.map((build) => {
+					return <CompletedBuild buildInfo={build} API={API} />;
+				})}
+			</div>
+		</>
 	);
 }
