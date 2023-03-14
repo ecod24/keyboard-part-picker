@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import "./Keyboard.css";
+import "./Keyboard.scss";
 
 export default function Keyboard({ info, currentBuild, setCurrentBuild }) {
 	const navigate = useNavigate();
