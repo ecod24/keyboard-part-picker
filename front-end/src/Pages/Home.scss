@@ -1,0 +1,55 @@
+.landingPage {
+	margin: 0 auto;
+	&__build {
+		height: 40vh;
+		background-color: rgba($color: #0000fa, $alpha: 0.65);
+		padding: 50px 20%;
+	}
+	&__products {
+		height: 50vh;
+		background-color: rgba($color: #0000ff, $alpha: 0.75);
+		padding: 50px 20%;
+	}
+	&__guides {
+		height: 40vh;
+		background-color: rgba($color: #0000af, $alpha: 0.75);
+		padding: 50px 20%;
+		color: white;
+	}
+	&__popularBuilds {
+		height: 40vh;
+		padding: 50px 20%;
+		background-color: rgba($color: #0000ef, $alpha: 0.75);
+	}
+	&__recentBuilds {
+		height: 30vh;
+		background-color: rgba($color: #0000ff, $alpha: 0.8);
+		padding: 50px 20%;
+	}
+	&__title {
+		font-size: 36px;
+		font-weight: 700;
+		margin: 10px;
+	}
+	&__description {
+		font-weight: 500;
+		font-size: 20px;
+		margin: 20px 0;
+	}
+	&__button {
+		margin: 10px;
+		font-size: 24px;
+		padding: 3px;
+	}
+	&__link {
+		border: #6b6b6b solid 2px;
+		border-radius: 5px;
+		background-color: aquamarine;
+		padding: 5px;
+	}
+	&__image {
+		border-radius: 15px;
+		max-width: 50%;
+		max-height: fit-content;
+	}
+}
