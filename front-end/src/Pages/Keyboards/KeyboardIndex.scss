@@ -1,0 +1,11 @@
+.keyboardIndex {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	margin: 50px 100px;
+}
+.filterContainer {
+	padding: 5px;
+	&__list {
+		list-style-type: none;
+	}
+}
