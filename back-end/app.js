@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (request, response) => {
-	response.send("hi"); //TODO:base backend route: show these people what routes they have access to!
+	response.send("hello heroku!"); //TODO:base backend route: show these people what routes they have access to!
 });
 
 app.use("/keycaps", keycapsController);
