@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
-export default function Home() {
+import axios from "axios";
+import CompletedBuild from "../Components/CompletedBuild/CompletedBuild";
+export default function Home({ API }) {
+	const [recentBuilds, setRecentBuilds] = useState([]);
+	const [loader, setLoader] = useState(false);
+	const loaderImg = "https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif";
+
+	useEffect(() => {
+		setLoader(false);
+		axios
+			.get(`${API}/builds`)
+			.then((response) => {
+				setRecentBuilds(response.data.payload.slice(-3));
+				setLoader(true);
+			})
+			.catch((error) => console.log(error));
+	}, []);
 	return (
 		<div className="landingPage">
 			<h1 className="landingPage__greeting">Welcome to Keyboard Part Picker!</h1>
@@ -39,12 +55,27 @@ export default function Home() {
 				<div className="landingPage__description">
 					For those on a budget, or for those in search of the best
 				</div>
-				<div className="landingPage__image"></div>
+				<div className="landingPage__button">
+					<Link className="landingPage__link" to={`/builds`}>
+						View Guides
+					</Link>
+				</div>
+				<img
+					className="landingPage__image"
+					src="https://i.ytimg.com/vi/Y_4UQriELIA/maxresdefault.jpg"
+					alt="picture of materials most often used to build mechanical keyboards"
+				/>
 			</div>
 			<div className="landingPage__recentBuilds">
 				<div className="landingPage__title">Recent Builds</div>
 				<div className="landingPage__description">See what people are building on KBPP</div>
-				<div className="landingPage__image"></div>
+				<div className="landingPage__lastThreeBuilds">
+					{loader ? (
+						recentBuilds.map((build) => <CompletedBuild buildInfo={build} API={API} />)
+					) : (
+						<img src={loaderImg} alt="loading..." />
+					)}
+				</div>
 			</div>
 			<div className="landingPage__popularBuilds">
 				<div className="landingPage__title">Popular Builds</div>

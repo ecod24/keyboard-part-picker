@@ -1,7 +1,9 @@
 .landingPage {
+	--light-green: rgb(90, 149, 90);
+	--medium-green: rgb(53, 90, 53);
 	margin: 0 auto;
 	&__build {
-		height: 40vh;
+		height: 50vh;
 		background-color: rgba($color: #0000fa, $alpha: 0.65);
 		padding: 50px 20%;
 	}
@@ -11,18 +13,18 @@
 		padding: 50px 20%;
 	}
 	&__guides {
-		height: 40vh;
+		height: 50vh;
 		background-color: rgba($color: #0000af, $alpha: 0.75);
 		padding: 50px 20%;
 		color: white;
 	}
 	&__popularBuilds {
-		height: 40vh;
+		height: 50vh;
 		padding: 50px 20%;
 		background-color: rgba($color: #0000ef, $alpha: 0.75);
 	}
 	&__recentBuilds {
-		height: 30vh;
+		height: 50vh;
 		background-color: rgba($color: #0000ff, $alpha: 0.8);
 		padding: 50px 20%;
 	}
@@ -34,12 +36,12 @@
 	&__description {
 		font-weight: 500;
 		font-size: 20px;
-		margin: 20px 0;
+		margin: 20px 10px;
 	}
 	&__button {
 		margin: 10px;
 		font-size: 24px;
-		padding: 3px;
+		padding: 5px 0;
 	}
 	&__link {
 		border: #6b6b6b solid 2px;
@@ -50,6 +52,11 @@
 	&__image {
 		border-radius: 15px;
 		max-width: 50%;
-		max-height: fit-content;
+		max-height: 30vh;
+		min-height: 25px;
+	}
+	&__lastThreeBuilds {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
