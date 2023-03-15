@@ -47,7 +47,7 @@ export default function Home({ API }) {
 				<img
 					src="https://www.maketecheasier.com/assets/uploads/2019/08/custom-mechanical-keyboard-guide-parts.jpg"
 					className="landingPage__image"
-					alt="picture of an exploded keyboard containing: keycaps, switches, plate, PCB, and the case housing."
+					alt="an exploded keyboard containing: keycaps, switches, plate, PCB, and the case housing."
 				/>
 			</div>
 			<div className="landingPage__guides">
@@ -63,7 +63,7 @@ export default function Home({ API }) {
 				<img
 					className="landingPage__image"
 					src="https://i.ytimg.com/vi/Y_4UQriELIA/maxresdefault.jpg"
-					alt="picture of materials most often used to build mechanical keyboards"
+					alt="materials most often used to build mechanical keyboards"
 				/>
 			</div>
 			<div className="landingPage__recentBuilds">

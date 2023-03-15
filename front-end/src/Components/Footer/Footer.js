@@ -28,12 +28,16 @@ function Footer() {
 			<div className="footerContainer__personalLinks">
 				<div className="footerContainer__linksTitle">Contact Me</div>
 				<div className="footerContainer__link">
-					<a href="https://linkedin.com/in/ecodrington24" target="_blank">
+					<a
+						href="https://linkedin.com/in/ecodrington24"
+						rel="noreferrer"
+						target="_blank"
+					>
 						LinkedIn
 					</a>
 				</div>
 				<div className="footerContainer__link">
-					<a href="https://github.com/ecod24" target="_blank">
+					<a href="https://github.com/ecod24" rel="noreferrer" target="_blank">
 						Github
 					</a>
 				</div>
