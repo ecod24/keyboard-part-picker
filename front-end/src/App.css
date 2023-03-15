@@ -13,10 +13,6 @@ button {
 table {
 	width: 100%;
 }
-td {
-	text-align: center;
-	border-top: 2px solid rgb(0, 0, 0);
-}
 a.add {
 	padding: 5px;
 }

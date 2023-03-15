@@ -76,16 +76,17 @@ export default function Builder(props) {
 	}, [currentBuild, currentBuild.switches, currentBuild.keyboard]);
 	return (
 		<div className="partList">
-			<table>
-				<thead>
+			<h1 className="partList__heading">Keyboard Builder</h1>
+			<table className="partList__table">
+				<thead className="partList__tableHeadings">
 					<tr>
-						<th>Component</th>
-						<th>Selection</th>
-						<th>Price</th>
+						<th className="partList__tableHeading">Component</th>
+						<th className="partList__tableHeading">Selection</th>
+						<th className="partList__tableHeading">Price</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr className="partList__singleRow">
 						<td>
 							<Link to="/products/keyboards">Keyboard (Case)</Link>
 						</td>
