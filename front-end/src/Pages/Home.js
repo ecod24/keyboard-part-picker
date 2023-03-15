@@ -79,7 +79,9 @@ export default function Home({ API }) {
 			</div>
 			<div className="landingPage__popularBuilds">
 				<div className="landingPage__title">Popular Builds</div>
-				<div className="landingPage__image"></div>
+				<div className="landingPage__image">
+					{/*backend request to /builds/popular and get 2-3 maybe? post them here */}
+				</div>
 			</div>
 		</div>
 	);
