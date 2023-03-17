@@ -27,19 +27,29 @@ function Footer() {
 			</div>
 			<div className="footerContainer__personalLinks">
 				<div className="footerContainer__linksTitle">Contact Me</div>
-				<div className="footerContainer__link">
-					<a
-						href="https://linkedin.com/in/ecodrington24"
-						rel="noreferrer"
-						target="_blank"
-					>
-						LinkedIn
-					</a>
-				</div>
-				<div className="footerContainer__link">
-					<a href="https://github.com/ecod24" rel="noreferrer" target="_blank">
-						Github
-					</a>
+				<div className="footerContainer__linksContainer">
+					<div className="footerContainer__link">
+						<a
+							href="https://linkedin.com/in/ecodrington24"
+							rel="noreferrer"
+							target="_blank"
+						>
+							<img
+								className="footerContainer__icon"
+								src="https://www.edigitalagency.com.au/wp-content/uploads/new-linkedin-logo-white-black-png.png"
+								alt="LinkedIn Profile Link"
+							/>
+						</a>
+					</div>
+					<div className="footerContainer__link">
+						<a href="https://github.com/ecod24" rel="noreferrer" target="_blank">
+							<img
+								className="footerContainer__icon"
+								src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+								alt="Github Profile Link"
+							/>
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>

@@ -1,3 +1,11 @@
+:root {
+	--main-bg-color: #f3f2f8;
+	--highlight-color: #ff8585;
+	--secondary-color: #c5a030;
+	--divider-color: #dadce0;
+	--text-color: #000000;
+	--nav-main-color: aquamarine;
+}
 button {
 	border-radius: 6px;
 	border: #282c34 solid 1px;
