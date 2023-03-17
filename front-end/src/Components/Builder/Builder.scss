@@ -1,16 +1,15 @@
-.partList img {
-	max-width: 100%;
-	max-height: 100%;
-	position: relative;
-	background: transparent;
-}
 .partList {
 	text-align: center;
 	margin-left: 15%;
 	margin-right: 15%;
 	margin-top: 20px;
 	height: 80vh;
-
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		position: relative;
+		background: transparent;
+	}
 	&__heading {
 		margin: 20px;
 	}
@@ -19,10 +18,7 @@
 		font-weight: 600;
 		padding: 5px 0;
 	}
-	td {
-		border-top: 1px solid black;
-		padding: 10px;
-	}
+
 	&__table {
 		border-spacing: 0px;
 	}

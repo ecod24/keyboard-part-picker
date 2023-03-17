@@ -6,6 +6,13 @@
 	--text-color: #000000;
 	--nav-main-color: aquamarine;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+	text-decoration: underline;
+}
 button {
 	border-radius: 6px;
 	border: #282c34 solid 1px;
@@ -20,6 +27,11 @@ button {
 }
 table {
 	width: 100%;
+	border-spacing: 0px;
+}
+td {
+	border-top: 1px solid black;
+	padding: 10px;
 }
 a.add {
 	padding: 5px;

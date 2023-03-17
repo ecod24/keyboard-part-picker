@@ -47,7 +47,7 @@ export default function Builder(props) {
 			keyboard_id: currentBuild.keyboard.id,
 			switches_id: currentBuild.switches.id,
 			keycaps_id: currentBuild.keycaps.id,
-			title: "test",
+			title: `Custom ${currentBuild.keyboard.name} build with ${currentBuild.switches.name} switches and ${currentBuild.keycaps.name} keycaps`,
 			total_price: totalPrice,
 			images: "blank",
 		};
@@ -220,9 +220,9 @@ export default function Builder(props) {
 					<tr>
 						<td colSpan={2}></td>
 						<td>
-							{" "}
 							<h3> Total: ${totalPrice}</h3>
 						</td>
+						<td></td>
 					</tr>
 				</tbody>
 			</table>
