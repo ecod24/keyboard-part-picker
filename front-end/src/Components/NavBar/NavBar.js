@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./NavBar.scss";
 import { useState } from "react";
 
 export default function NavBar() {

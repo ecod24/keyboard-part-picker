@@ -1,39 +1,35 @@
 nav {
 	height: 10%;
 	display: grid;
-
 	border-bottom: 1px solid gray;
-
 	background-color: aquamarine;
 }
-nav div {
+
+.navWrapper {
 	display: grid;
 	grid-template-columns: auto auto auto auto 1fr;
 	margin: auto;
 	padding: 5px;
 	text-align: center;
-	align-items: center;
-	/* justify-content: center; */
-}
-.navWrapper a {
-	margin: auto;
-	padding: 10%;
-	align-items: center;
-	color: black;
-	text-decoration: none;
-
-	font-size: 20px;
+	a {
+		margin: auto;
+		padding: 10%;
+		color: black;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 20px;
+	}
+	a:hover {
+		color: rgb(240, 240, 255);
+		cursor: pointer;
+		transition: color 0.25s cubic-bezier(0.05, 0, 0, 1);
+	}
 }
 nav img {
 	max-height: 80px;
 	width: 70%;
 }
 
-.navWrapper a:hover {
-	background-color: rgb(240, 240, 255);
-	cursor: pointer;
-	transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
-}
 /* .navWrapper a.selected {
 	background-color: rgba(135, 177, 214, 0.91);
 }
