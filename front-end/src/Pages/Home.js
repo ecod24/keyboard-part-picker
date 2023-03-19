@@ -20,7 +20,7 @@ export default function Home({ API }) {
 	}, []);
 	return (
 		<div className="landingPage">
-			<h1 className="landingPage__greeting">Welcome to Keyboard Part Picker!</h1>
+			<div className="landingPage__greeting">Welcome to Keyboard Part Picker!</div>
 			<div className="landingPage__build">
 				<div className="landingPage__title">Envision your dream keyboard</div>
 				<div className="landingPage__button">

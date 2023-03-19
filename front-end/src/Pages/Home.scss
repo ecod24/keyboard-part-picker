@@ -1,32 +1,42 @@
 .landingPage {
 	--light-green: rgb(90, 149, 90);
 	--medium-green: rgb(53, 90, 53);
-	margin: 0 auto;
+	background-color: var(--dark-gray-background);
+	color: white;
+	&__greeting {
+		font-weight: 700;
+		font-size: 36px;
+		text-align: center;
+		padding: 30px 0;
+	}
 	&__build {
 		height: 50vh;
-		background-color: rgba($color: #0000fa, $alpha: 0.65);
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 		padding: 50px 20%;
 	}
 	&__products {
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 		height: 50vh;
-		background-color: rgba($color: #0000ff, $alpha: 0.75);
+		background-color: var(--light-gray-background);
 		padding: 50px 20%;
 	}
 	&__guides {
 		height: 50vh;
-		background-color: rgba($color: #0000af, $alpha: 0.75);
 		padding: 50px 20%;
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 		color: white;
 	}
 	&__popularBuilds {
 		height: 50vh;
 		padding: 50px 20%;
-		background-color: rgba($color: #0000ef, $alpha: 0.75);
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 6px 0 rgb(0, 0, 0);
+
 	}
 	&__recentBuilds {
 		height: 50vh;
-		background-color: rgba($color: #0000ff, $alpha: 0.8);
 		padding: 50px 20%;
+		background-color: var(--light-gray-background);
+		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 	}
 	&__title {
 		font-size: 36px;
@@ -46,7 +56,7 @@
 	&__link {
 		border: #6b6b6b solid 2px;
 		border-radius: 5px;
-		background-color: aquamarine;
+		background-color: var(--nav-main-color);
 		padding: 5px;
 	}
 	&__image {

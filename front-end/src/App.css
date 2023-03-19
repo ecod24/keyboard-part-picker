@@ -4,7 +4,9 @@
 	--secondary-color: #c5a030;
 	--divider-color: #dadce0;
 	--text-color: #000000;
-	--nav-main-color: aquamarine;
+	--nav-main-color: #7fffd4;
+	--light-gray-background: #717171;
+	--dark-gray-background: #4b4a4a;
 }
 a {
 	text-decoration: none;
