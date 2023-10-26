@@ -10,7 +10,7 @@ const getAllBuilds = async () => {
 
 const getBuild = async (id) => {
 	try {
-		return await db.any(`SELECT * FROM builds WHERE id=${id}`);
+		return await db.one(`SELECT * FROM builds WHERE id=${id}`);
 	} catch (error) {
 		return error;
 	}

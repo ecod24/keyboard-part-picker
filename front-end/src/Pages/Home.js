@@ -28,11 +28,11 @@ export default function Home({ API }) {
 						Start Building
 					</Link>
 				</div>
-				<img
+				{/* <img
 					className="landingPage__image"
 					src="https://i.ytimg.com/vi/E3aUukZRWJk/maxresdefault.jpg"
 					alt="custom keyboard build from Switch and Click's Youtube channel."
-				/>
+				/> */}
 			</div>
 			<div className="landingPage__products">
 				<div className="landingPage__title">See Products</div>

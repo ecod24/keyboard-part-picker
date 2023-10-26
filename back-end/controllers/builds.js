@@ -83,6 +83,7 @@ buildsController.get("/:id", async (request, response) => {
 			success: false,
 			id: id,
 			payload: `NOT FOUND: No build found with id ${id}`,
+			error: build,
 		});
 	}
 });

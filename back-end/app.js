@@ -9,8 +9,8 @@ const buildsController = require("./controllers/builds");
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (request, response) => {
-	response.send("hello heroku!"); //TODO:base backend route: show these people what routes they have access to!
+app.get("/hello", (request, response) => {
+	response.status(200).send("hello!"); //TODO:base backend route: show these people what routes they have access to!
 });
 
 app.use("/keycaps", keycapsController);
@@ -19,7 +19,7 @@ app.use("/switches", switchesController);
 app.use("/builds", buildsController);
 
 app.get("*", (request, response) => {
-	response.status(404).json({ status: "this route does not exist. please try again" });
+	response.status(404).json(`route does not exist.`);
 });
 
 module.exports = app;
