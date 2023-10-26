@@ -13,6 +13,7 @@
 		height: 50vh;
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
 		padding: 50px 20%;
+		background-image: url("https://i.ytimg.com/vi/E3aUukZRWJk/maxresdefault.jpg");
 	}
 	&__products {
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
@@ -30,13 +31,13 @@
 		height: 50vh;
 		padding: 50px 20%;
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 6px 0 rgb(0, 0, 0);
-
 	}
 	&__recentBuilds {
-		height: 50vh;
+		height: auto;
 		padding: 50px 20%;
 		background-color: var(--light-gray-background);
 		box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgb(0, 0, 0);
+		// max-width: 500px;
 	}
 	&__title {
 		font-size: 36px;
@@ -59,6 +60,11 @@
 		background-color: var(--nav-main-color);
 		padding: 5px;
 	}
+	&__link:hover {
+		background-color: var(--light-gray-background);
+		color: var(--nav-main-color);
+		transition: background-color 0.2s ease 0s, color 0.2s ease 0s, text-decoration 0.2s ease 0s;
+	}
 	&__image {
 		border-radius: 15px;
 		max-width: 50%;
@@ -67,6 +73,7 @@
 	}
 	&__lastThreeBuilds {
 		display: grid;
+		overflow-x: scroll;
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
