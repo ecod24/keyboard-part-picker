@@ -6,7 +6,7 @@ const {
 	createKeyboard,
 	deleteKeyboard,
 	searchForKeyboardByKeyword,
-} = require("../queries/keyboards");
+} = require("../queries/KeyboardsQueries");
 const keyboardController = express();
 
 keyboardController.get("/", async (request, response) => {

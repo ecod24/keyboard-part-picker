@@ -5,7 +5,7 @@ const {
 	updateKeycap,
 	createKeycap,
 	deleteKeycap,
-} = require("../queries/keycaps");
+} = require("../queries/KeycapsQueries");
 const keycapController = express();
 
 keycapController.get("/", async (request, response) => {

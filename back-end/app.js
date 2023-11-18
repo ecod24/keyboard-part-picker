@@ -1,16 +1,16 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const keyboardsController = require("./controllers/keyboards");
-const switchesController = require("./controllers/switches");
-const keycapsController = require("./controllers/keycaps");
-const buildsController = require("./controllers/builds");
+const keyboardsController = require("./controllers/KeyboardsController");
+const switchesController = require("./controllers/SwitchesController");
+const keycapsController = require("./controllers/KeycapsController");
+const buildsController = require("./controllers/BuildsController");
 
 app.use(cors());
 app.use(express.json());
 
 app.get("/hello", (request, response) => {
-	response.status(200).send("hello!"); //TODO:base backend route: show these people what routes they have access to!
+	response.status(200).send("hello!");
 });
 
 app.use("/keycaps", keycapsController);
