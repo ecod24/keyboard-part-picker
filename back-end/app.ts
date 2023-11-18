@@ -1,4 +1,5 @@
-const express = require("express");
+// const express = require("express");
+import express, { Request, Response } from "express";
 const app = express();
 const cors = require("cors");
 const keyboardsController = require("./controllers/KeyboardsController");
@@ -9,7 +10,7 @@ const buildsController = require("./controllers/BuildsController");
 app.use(cors());
 app.use(express.json());
 
-app.get("/hello", (request, response) => {
+app.get("/hello", (request: Request, response: Response) => {
 	response.status(200).send("hello!");
 });
 
@@ -18,7 +19,7 @@ app.use("/keyboards", keyboardsController);
 app.use("/switches", switchesController);
 app.use("/builds", buildsController);
 
-app.get("*", (request, response) => {
+app.get("*", (request: Request, response: Response) => {
 	response.status(404).json(`route does not exist.`);
 });
 
