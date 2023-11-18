@@ -9,7 +9,7 @@ const {
 	createBuild,
 	updateBuild,
 	deleteBuild,
-} = require("../queries/builds");
+} = require("../queries/BuildsQueries");
 const buildsController = express();
 
 buildsController.get("/", async (request, response) => {

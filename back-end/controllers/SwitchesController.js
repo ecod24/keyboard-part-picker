@@ -5,7 +5,7 @@ const {
 	updateSwitch,
 	createSwitch,
 	deleteSwitch,
-} = require("../queries/switches");
+} = require("../queries/SwitchesQueries");
 const switchController = express();
 
 switchController.get("/", async (request, response) => {
