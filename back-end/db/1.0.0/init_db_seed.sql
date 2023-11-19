@@ -1,4 +1,5 @@
-\c d7t4k0k1e55dpt;
+\c KBPP;
+
 INSERT INTO keyboards (name, brand, layout, price, image)
 VALUES (
         'Keychron K8 Pro',

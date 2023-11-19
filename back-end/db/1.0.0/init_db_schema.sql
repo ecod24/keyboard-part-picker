@@ -1,4 +1,8 @@
-\c d7t4k0k1e55dpt;
+DROP DATABASE IF EXISTS KBPP;
+CREATE DATABASE KBPP;
+
+\c KBPP;
+
 CREATE TABLE keyboards (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
@@ -7,6 +11,7 @@ CREATE TABLE keyboards (
     price INT,
     image TEXT
 );
+
 CREATE TABLE switches (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
@@ -16,6 +21,7 @@ CREATE TABLE switches (
     prelubed BOOL default false, 
     image TEXT
 );
+
 CREATE TABLE keycaps (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
