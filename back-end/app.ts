@@ -1,7 +1,8 @@
 // const express = require("express");
 import express, { Request, Response } from "express";
+import cors from "cors";
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 const keyboardsController = require("./controllers/KeyboardsController");
 const switchesController = require("./controllers/SwitchesController");
 const keycapsController = require("./controllers/KeycapsController");

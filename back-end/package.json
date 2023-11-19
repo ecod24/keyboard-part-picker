@@ -1,8 +1,6 @@
 {
 	"name": "keyboard-part-picker-server",
 	"scripts": {
-		"db:init": "psql -U postgres -f db/offline_schema.sql",
-		"db:seed": "psql -U postgres -f db/offline_seed.sql",
 		"start": "ts-node server.ts",
 		"build": "tsc"
 	},
