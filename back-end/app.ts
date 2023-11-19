@@ -1,13 +1,11 @@
-// const express = require("express");
 import express, { Request, Response } from "express";
 import cors from "cors";
-const app = express();
-// const cors = require("cors");
-const keyboardsController = require("./controllers/KeyboardsController");
-const switchesController = require("./controllers/SwitchesController");
-const keycapsController = require("./controllers/KeycapsController");
-const buildsController = require("./controllers/BuildsController");
+import keyboardsController from "./controllers/keyboardsController";
+import keycapsController from "./controllers/keycapsController";
+import switchesController from "./controllers/switchesController";
+import buildsController from "./controllers/buildsController";
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 
