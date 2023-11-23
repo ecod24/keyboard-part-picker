@@ -22,4 +22,4 @@ app.get("*", (request: Request, response: Response) => {
 	response.status(404).json(`route does not exist.`);
 });
 
-module.exports = app;
+export default app;
