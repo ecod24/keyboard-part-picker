@@ -1,14 +1,22 @@
-const express = require("express");
-const {
+// const express = require("express");
+import express, { Request, Response } from "express";
+// const {
+// 	getAllKeycaps,
+// 	getKeycap,
+// 	updateKeycap,
+// 	createKeycap,
+// 	deleteKeycap,
+// } = require("../queries/KeycapsQueries");
+import {
 	getAllKeycaps,
 	getKeycap,
 	updateKeycap,
 	createKeycap,
 	deleteKeycap,
-} = require("../queries/KeycapsQueries");
+} from "../queries/KeycapsQueries";
 const keycapController = express();
 
-keycapController.get("/", async (request, response) => {
+keycapController.get("/", async (request: Request, response: Response) => {
 	const allKeycaps = await getAllKeycaps();
 	if (allKeycaps[0]) {
 		response.status(200).json({
@@ -20,7 +28,7 @@ keycapController.get("/", async (request, response) => {
 	}
 });
 
-keycapController.get("/:id", async (request, response) => {
+keycapController.get("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const keycap = await getKeycap(id);
 	if (keycap.id) {
@@ -37,7 +45,7 @@ keycapController.get("/:id", async (request, response) => {
 	}
 });
 
-keycapController.delete("/:id", async (request, response) => {
+keycapController.delete("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const deletedKeycap = await deleteKeycap(id);
 	if (deletedKeycap) {
@@ -60,7 +68,7 @@ keycapController.delete("/:id", async (request, response) => {
 	}
 });
 
-keycapController.post("/", async (request, response) => {
+keycapController.post("/", async (request: Request, response: Response) => {
 	try {
 		const keycap = await createKeycap(request.body);
 		response.json({
@@ -72,7 +80,7 @@ keycapController.post("/", async (request, response) => {
 	}
 });
 
-keycapController.put("/:id", async (request, response) => {
+keycapController.put("/:id", async (request: Request, response: Response) => {
 	try {
 		const { id } = request.params;
 		const keycaps = await updateKeycap(id, request.body);
@@ -85,4 +93,5 @@ keycapController.put("/:id", async (request, response) => {
 	}
 });
 
-module.exports = keycapController;
+// module.exports = keycapController;
+export default keycapController;

@@ -1,5 +1,5 @@
-const express = require("express");
-const {
+import express, { Request, Response } from "express";
+import {
 	getBuild,
 	getAllBuilds,
 	getBuildsByUserID,
@@ -9,10 +9,10 @@ const {
 	createBuild,
 	updateBuild,
 	deleteBuild,
-} = require("../queries/BuildsQueries");
+} from "../queries/BuildsQueries";
 const buildsController = express();
 
-buildsController.get("/", async (request, response) => {
+buildsController.get("/", async (request: Request, response: Response) => {
 	//whether by UserID/KBID/SwID/KcID, go here?
 	const { keyboard_id, switches_id, keycaps_id, user_id } = request.query;
 	if (keyboard_id) {
@@ -70,7 +70,7 @@ buildsController.get("/", async (request, response) => {
 	}
 });
 
-buildsController.get("/:id", async (request, response) => {
+buildsController.get("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const build = await getBuild(id);
 	if (build.id) {
@@ -87,7 +87,7 @@ buildsController.get("/:id", async (request, response) => {
 		});
 	}
 });
-buildsController.post("/", async (request, response) => {
+buildsController.post("/", async (request: Request, response: Response) => {
 	try {
 		const build = await createBuild(request.body);
 		response.json({
@@ -101,7 +101,7 @@ buildsController.post("/", async (request, response) => {
 		});
 	}
 });
-buildsController.put("/:id", async (request, response) => {
+buildsController.put("/:id", async (request: Request, response: Response) => {
 	try {
 		const { id } = request.params;
 		const build = await updateBuild(request.body, id);
@@ -116,7 +116,7 @@ buildsController.put("/:id", async (request, response) => {
 		});
 	}
 });
-buildsController.delete("/:id", async (request, response) => {
+buildsController.delete("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const deletedBuild = await deleteBuild(id);
 	if (deletedBuild) {
@@ -139,4 +139,4 @@ buildsController.delete("/:id", async (request, response) => {
 	}
 });
 
-module.exports = buildsController;
+export default buildsController;

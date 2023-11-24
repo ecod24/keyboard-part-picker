@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"name": "Akko WOB",
+		"brand": "Akko",
+		"price": 59.99,
+		"colors": "black, white",
+		"profile": "ASA",
+		"image": "https://en.akkogear.com/wp-content/uploads/2021/08/White-On-Black-Keycap-Set.jpg",
+		"layout_compatibility": "60%, 65%, 75%, TKL, 1800, 96%, 100%"
+	},
+	{
+		"id": 2,
+		"name": "Keychron Shell White Double Shot PBT",
+		"brand": "Keychron",
+		"price": 29.99,
+		"colors": "white, black",
+		"profile": "OSA",
+		"image": "https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-double-shot-pbt-osa-keycaps-set-white_1800x1800.jpg?v=1660818357",
+		"layout_compatibility": "60%, 65%, 70%, 75%, TKL, 96%, 100%"
+	}
+]

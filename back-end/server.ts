@@ -1,8 +1,10 @@
 // DEPENDENCIES
-const app = require("./app");
+import app from "./app";
+import dotenv from "dotenv";
 
 // CONFIGURATION
-require("dotenv").config();
+dotenv.config();
+
 const PORT: any = process.env.PORT || 3003;
 
 // LISTEN

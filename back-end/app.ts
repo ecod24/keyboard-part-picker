@@ -1,13 +1,11 @@
-// const express = require("express");
 import express, { Request, Response } from "express";
 import cors from "cors";
-const app = express();
-// const cors = require("cors");
-const keyboardsController = require("./controllers/KeyboardsController");
-const switchesController = require("./controllers/SwitchesController");
-const keycapsController = require("./controllers/KeycapsController");
-const buildsController = require("./controllers/BuildsController");
+import keyboardsController from "./controllers/KeyboardsController";
+import keycapsController from "./controllers/KeycapsController";
+import switchesController from "./controllers/SwitchesController";
+import buildsController from "./controllers/BuildsController";
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 
@@ -24,4 +22,4 @@ app.get("*", (request: Request, response: Response) => {
 	response.status(404).json(`route does not exist.`);
 });
 
-module.exports = app;
+export default app;
