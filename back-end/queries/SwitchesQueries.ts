@@ -1,5 +1,7 @@
-const db = require("../db/dbConfig.js");
-const getAllSwitches = async () => {
+import db from "../db/dbConfig";
+import { SwitchModel } from "../models/SwitchModel.js";
+
+export const getAllSwitches = async () => {
 	try {
 		return await db.any("SELECT * FROM switches");
 	} catch (error) {
@@ -7,7 +9,7 @@ const getAllSwitches = async () => {
 	}
 };
 
-const getSwitch = async (id) => {
+export const getSwitch = async (id) => {
 	try {
 		return await db.one("SELECT * FROM switches WHERE id=$1", id);
 	} catch (error) {
@@ -15,7 +17,7 @@ const getSwitch = async (id) => {
 	}
 };
 
-const createSwitch = async (keyswitch) => {
+export const createSwitch = async (keyswitch) => {
 	try {
 		let {
 			name,
@@ -53,7 +55,7 @@ const createSwitch = async (keyswitch) => {
 	}
 };
 
-const updateSwitch = async (id, keyswitch) => {
+export const updateSwitch = async (id, keyswitch) => {
 	let {
 		name,
 		brand,
@@ -92,7 +94,7 @@ const updateSwitch = async (id, keyswitch) => {
 	}
 };
 
-const deleteSwitch = async (id) => {
+export const deleteSwitch = async (id) => {
 	try {
 		return await db.one("DELETE FROM switches WHERE id=$1 RETURNING *", id);
 	} catch (error) {
@@ -100,10 +102,10 @@ const deleteSwitch = async (id) => {
 	}
 };
 
-module.exports = {
-	getAllSwitches,
-	getSwitch,
-	createSwitch,
-	updateSwitch,
-	deleteSwitch,
-};
+// module.exports = {
+// 	getAllSwitches,
+// 	getSwitch,
+// 	createSwitch,
+// 	updateSwitch,
+// 	deleteSwitch,
+// };

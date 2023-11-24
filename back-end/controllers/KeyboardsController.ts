@@ -1,15 +1,15 @@
-const express = require("express");
-const {
+import express, { Request, Response } from "express";
+import {
 	getAllKeyboards,
 	getKeyboard,
 	updateKeyboard,
 	createKeyboard,
 	deleteKeyboard,
 	searchForKeyboardByKeyword,
-} = require("../queries/KeyboardsQueries");
+} from "../queries/KeyboardsQueries";
 const keyboardController = express();
 
-keyboardController.get("/", async (request, response) => {
+keyboardController.get("/", async (request: Request, response: Response) => {
 	const allKeyboards = await getAllKeyboards();
 	if (allKeyboards[0]) {
 		response.status(200).json({
@@ -21,7 +21,7 @@ keyboardController.get("/", async (request, response) => {
 	}
 });
 
-keyboardController.get("/search", async (request, response) => {
+keyboardController.get("/search", async (request: Request, response: Response) => {
 	const { name } = request.query;
 	const searchResult = await searchForKeyboardByKeyword(name);
 	if (searchResult[0]) {
@@ -38,7 +38,7 @@ keyboardController.get("/search", async (request, response) => {
 	}
 });
 
-keyboardController.get("/:id", async (request, response) => {
+keyboardController.get("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const keyboard = await getKeyboard(id);
 	if (keyboard.id) {
@@ -55,7 +55,7 @@ keyboardController.get("/:id", async (request, response) => {
 	}
 });
 
-keyboardController.delete("/:id", async (request, response) => {
+keyboardController.delete("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const deletedKeyboard = await deleteKeyboard(id);
 	if (deletedKeyboard) {
@@ -78,7 +78,7 @@ keyboardController.delete("/:id", async (request, response) => {
 	}
 });
 
-keyboardController.post("/", async (request, response) => {
+keyboardController.post("/", async (request: Request, response: Response) => {
 	try {
 		const keyboard = await createKeyboard(request.body);
 		response.json({
@@ -90,7 +90,7 @@ keyboardController.post("/", async (request, response) => {
 	}
 });
 
-keyboardController.put("/:id", async (request, response) => {
+keyboardController.put("/:id", async (request: Request, response: Response) => {
 	try {
 		const { id } = request.params;
 		const keyboards = await updateKeyboard(id, request.body);
@@ -103,4 +103,4 @@ keyboardController.put("/:id", async (request, response) => {
 	}
 });
 
-module.exports = keyboardController;
+export default keyboardController;

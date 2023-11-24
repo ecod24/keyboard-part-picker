@@ -1,9 +1,9 @@
 import express, { Request, Response } from "express";
 import cors from "cors";
-import keyboardsController from "./controllers/keyboardsController";
-import keycapsController from "./controllers/keycapsController";
-import switchesController from "./controllers/switchesController";
-import buildsController from "./controllers/buildsController";
+import keyboardsController from "./controllers/KeyboardsController";
+import keycapsController from "./controllers/KeycapsController";
+import switchesController from "./controllers/SwitchesController";
+import buildsController from "./controllers/BuildsController";
 
 const app = express();
 app.use(cors());

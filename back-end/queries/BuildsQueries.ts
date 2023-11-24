@@ -1,6 +1,6 @@
-const db = require("../db/dbConfig.js");
+import db from "../db/dbConfig";
 
-const getAllBuilds = async () => {
+export const getAllBuilds = async () => {
 	try {
 		return await db.any("SELECT * FROM builds");
 	} catch (error) {
@@ -8,7 +8,7 @@ const getAllBuilds = async () => {
 	}
 };
 
-const getBuild = async (id) => {
+export const getBuild = async (id) => {
 	try {
 		return await db.one(`SELECT * FROM builds WHERE id=${id}`);
 	} catch (error) {
@@ -16,7 +16,7 @@ const getBuild = async (id) => {
 	}
 };
 
-const createBuild = async (build) => {
+export const createBuild = async (build) => {
 	try {
 		let { title, keyboard_id, switches_id, keycaps_id, builder_id, total_price, images } =
 			build;
@@ -29,7 +29,7 @@ const createBuild = async (build) => {
 	}
 };
 
-const updateBuild = async (build, id) => {
+export const updateBuild = async (build, id) => {
 	try {
 		let { title, keyboard_id, switches_id, keycaps_id, total_price, images } = build;
 		return await db.one(
@@ -40,7 +40,7 @@ const updateBuild = async (build, id) => {
 	}
 };
 
-const deleteBuild = async (id) => {
+export const deleteBuild = async (id) => {
 	try {
 		return await db.one(`DELETE FROM builds WHERE id=${id} RETURNING *`);
 	} catch (error) {
@@ -48,42 +48,42 @@ const deleteBuild = async (id) => {
 	}
 };
 
-const getBuildsByUserID = async (id) => {
+export const getBuildsByUserID = async (id) => {
 	try {
 		return await db.any(`SELECT * FROM builds WHERE builder_id=${id}`);
 	} catch (error) {
 		return error;
 	}
 };
-const getBuildsByKeyboardID = async (id) => {
+export const getBuildsByKeyboardID = async (id) => {
 	try {
 		return await db.any(`SELECT * FROM builds WHERE keyboard_id=${id}`);
 	} catch (error) {
 		return error;
 	}
 };
-const getBuildsBySwitchesID = async (id) => {
+export const getBuildsBySwitchesID = async (id) => {
 	try {
 		return await db.any(`SELECT * FROM builds WHERE switches_id=${id}`);
 	} catch (error) {
 		return error;
 	}
 };
-const getBuildsByKeycapsID = async (id) => {
+export const getBuildsByKeycapsID = async (id) => {
 	try {
 		return await db.any(`SELECT * FROM builds WHERE keycaps_id=${id}`);
 	} catch (error) {
 		return error;
 	}
 };
-module.exports = {
-	getAllBuilds,
-	getBuild,
-	createBuild,
-	updateBuild,
-	deleteBuild,
-	getBuildsByUserID,
-	getBuildsByKeyboardID,
-	getBuildsBySwitchesID,
-	getBuildsByKeycapsID,
-};
+// module.exports = {
+// 	getAllBuilds,
+// 	getBuild,
+// 	createBuild,
+// 	updateBuild,
+// 	deleteBuild,
+// 	getBuildsByUserID,
+// 	getBuildsByKeyboardID,
+// 	getBuildsBySwitchesID,
+// 	getBuildsByKeycapsID,
+// };

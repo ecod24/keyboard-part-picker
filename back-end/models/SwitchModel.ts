@@ -5,10 +5,10 @@ export interface SwitchModel {
 	name: string;
 	type: SwitchType;
 	force: number;
-	pre_lubed: boolean;
-	travel_distance: number;
-	three_pin: boolean;
+	preLubed: boolean;
+	travelDistance: number;
+	threePin: boolean;
 	stem: string;
-	top_housing: string;
-	bottom_housing: string;
+	topHousing: string;
+	bottomHousing: string;
 }

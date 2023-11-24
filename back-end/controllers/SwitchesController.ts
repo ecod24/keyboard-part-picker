@@ -1,14 +1,14 @@
-const express = require("express");
-const {
+import express, { Request, Response } from "express";
+import {
 	getAllSwitches,
 	getSwitch,
 	updateSwitch,
 	createSwitch,
 	deleteSwitch,
-} = require("../queries/SwitchesQueries");
+} from "../queries/SwitchesQueries";
 const switchController = express();
 
-switchController.get("/", async (request, response) => {
+switchController.get("/", async (request: Request, response: Response) => {
 	const allSwitches = await getAllSwitches();
 	if (allSwitches[0]) {
 		response.status(200).json({
@@ -20,7 +20,7 @@ switchController.get("/", async (request, response) => {
 	}
 });
 
-switchController.get("/:id", async (request, response) => {
+switchController.get("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const keyswitch = await getSwitch(id);
 	if (keyswitch.id) {
@@ -37,7 +37,7 @@ switchController.get("/:id", async (request, response) => {
 	}
 });
 
-switchController.delete("/:id", async (request, response) => {
+switchController.delete("/:id", async (request: Request, response: Response) => {
 	const { id } = request.params;
 	const deletedSwitch = await deleteSwitch(id);
 	if (deletedSwitch) {
@@ -60,7 +60,7 @@ switchController.delete("/:id", async (request, response) => {
 	}
 });
 
-switchController.post("/", async (request, response) => {
+switchController.post("/", async (request: Request, response: Response) => {
 	try {
 		const switches = await createSwitch(request.body);
 		response.json({
@@ -72,7 +72,7 @@ switchController.post("/", async (request, response) => {
 	}
 });
 
-switchController.put("/:id", async (request, response) => {
+switchController.put("/:id", async (request: Request, response: Response) => {
 	try {
 		const { id } = request.params;
 		const keyswitch = await updateSwitch(id, request.body);
@@ -85,4 +85,4 @@ switchController.put("/:id", async (request, response) => {
 	}
 });
 
-module.exports = switchController;
+export default switchController;

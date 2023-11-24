@@ -1,6 +1,6 @@
-const db = require("../db/dbConfig.js");
+import db from "../db/dbConfig";
 
-const getAllKeyboards = async () => {
+export const getAllKeyboards = async () => {
 	try {
 		return await db.any("SELECT * FROM keyboards");
 	} catch (error) {
@@ -8,7 +8,7 @@ const getAllKeyboards = async () => {
 	}
 };
 
-const getKeyboard = async (id) => {
+export const getKeyboard = async (id) => {
 	try {
 		return await db.one("SELECT * FROM keyboards WHERE id=$1", id);
 	} catch (error) {
@@ -16,7 +16,7 @@ const getKeyboard = async (id) => {
 	}
 };
 
-const searchForKeyboardByKeyword = async (query) => {
+export const searchForKeyboardByKeyword = async (query) => {
 	try {
 		return await db.any("SELECT * FROM keyboards WHERE name LIKE '%$1%'", query);
 	} catch (error) {
@@ -24,7 +24,7 @@ const searchForKeyboardByKeyword = async (query) => {
 	}
 };
 
-const createKeyboard = async (keyboard) => {
+export const createKeyboard = async (keyboard) => {
 	try {
 		let { name, brand, layout, price, image, color, description } = keyboard;
 		return await db.one(
@@ -36,7 +36,7 @@ const createKeyboard = async (keyboard) => {
 	}
 };
 
-const updateKeyboard = async (id, keyboard) => {
+export const updateKeyboard = async (id, keyboard) => {
 	let { name, brand, layout, price, image, color, description } = keyboard;
 	try {
 		return await db.one(
@@ -48,19 +48,10 @@ const updateKeyboard = async (id, keyboard) => {
 	}
 };
 
-const deleteKeyboard = async (id) => {
+export const deleteKeyboard = async (id) => {
 	try {
 		return await db.one("DELETE FROM keyboards WHERE id=$1 RETURNING *", id);
 	} catch (error) {
 		return error;
 	}
-};
-
-module.exports = {
-	getAllKeyboards,
-	getKeyboard,
-	createKeyboard,
-	updateKeyboard,
-	deleteKeyboard,
-	searchForKeyboardByKeyword,
 };
